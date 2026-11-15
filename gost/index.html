@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сосновый берег — гостевые дома под Пермью</title>
+<meta name="description" content="Четыре деревянных дома на берегу Сылвы в 40 минутах от Перми. Баня, сапы и мангал. Бронирование онлайн без наценок.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f6f0e1;--cream2:#efe6d0;--paper:#fbf8f0;--pine:#006434;--pine-d:#004d28;--mari:#fcbd1c;--sky:#a6dfff;--ember:#dd5000;--char:#1f2a22;--muted:#5d6a60;--line:rgba(31,42,34,.14);--r:20px;--R:40px;--f:"Inter Tight",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--char);font:400 17px/1.55 var(--f);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--pine);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+.ann{background:var(--sky);text-align:center;font-size:14px;padding:9px 16px}
+.ann a{font-weight:600}
+header .hb{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+.logo{display:flex;align-items:center;gap:10px;color:var(--pine);font-weight:600;font-size:21px;letter-spacing:-.03em;text-decoration:none;white-space:nowrap}
+@media(max-width:520px){.logo{font-size:18px}.tel{font-size:14px}}
+.logo svg{width:28px;height:28px}
+header nav{display:flex;gap:26px;font-size:15px}
+header nav a{text-decoration:none}
+header nav a:hover{color:var(--pine)}
+.tel{text-decoration:none;font-weight:500;white-space:nowrap}
+@media(max-width:900px){header nav{display:none}}
+
+/* hero: фото рядом с текстом */
+.hero{display:grid;grid-template-columns:1fr 1.25fr;gap:24px;align-items:stretch}
+.hero .txt{padding:40px 8px 24px 0;display:flex;flex-direction:column}
+.hero h1{font-weight:300;font-size:clamp(46px,6vw,92px);line-height:.98;letter-spacing:-.055em;color:var(--pine)}
+.hero p{margin-top:26px;font-size:19px;max-width:36ch;color:var(--muted)}
+.hero .note{margin-top:auto;padding-top:32px;display:flex;gap:28px;flex-wrap:wrap;font-size:15px;color:var(--muted)}
+.hero .note b{display:block;color:var(--char);font-weight:500;font-size:17px}
+.hero .ph{border-radius:var(--R);overflow:hidden;min-height:540px;position:relative;background:var(--cream2)}
+.hero .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .ph .stamp{position:absolute;right:22px;top:22px;width:104px;height:104px;border-radius:50%;background:var(--paper);color:var(--pine);display:grid;place-items:center;text-align:center;font-size:12px;line-height:1.2;font-weight:500}
+.hero .ph .stamp svg{position:absolute;inset:0;animation:spin 24s linear infinite}
+.hero .ph .stamp b{font-size:24px;font-weight:600;letter-spacing:-.03em;display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero .ph{min-height:340px;order:-1}.hero .txt{padding:8px 0}}
+
+/* бронирование */
+.book{position:relative;margin-top:24px;background:var(--mari);border-radius:var(--R);padding:12px;display:grid;grid-template-columns:1.2fr 1.2fr .9fr 1.2fr auto;gap:8px;align-items:stretch;z-index:5}
+.bf{background:rgba(255,255,255,.55);border-radius:28px;padding:10px 20px;border:0;text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:center;min-width:0;transition:background .2s}
+.bf:hover,.bf.on{background:#fff}
+.bf small{font-size:12px;color:#5b4a12;font-weight:500}
+.bf b{font-weight:500;font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bf select{border:0;background:transparent;font-weight:500;font-size:17px;outline:none;width:100%;cursor:pointer;appearance:none}
+.guests{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.guests button{width:30px;height:30px;border-radius:50%;border:1px solid rgba(0,0,0,.25);background:transparent;cursor:pointer;line-height:1}
+.go{background:var(--pine);color:#fff;border:0;border-radius:28px;padding:0 30px;font-weight:500;cursor:pointer;min-height:62px;transition:background .2s,transform .15s}
+.go:hover{background:var(--pine-d)}
+.go:active{transform:scale(.97)}
+.sum{grid-column:1/-1;display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)}
+.sum.on{grid-template-rows:1fr}
+.sum>div{overflow:hidden}
+.sum .in{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 18px 6px}
+.sum .tot{font-size:30px;font-weight:500;letter-spacing:-.03em}
+.sum .tot small{font-size:15px;font-weight:400;color:#5b4a12;margin-left:8px}
+.sum .err{color:#7a2600;font-weight:500}
+/* календарь */
+.cal{position:absolute;left:12px;top:calc(100% + 8px);background:var(--paper);border-radius:var(--r);padding:20px;width:min(640px,calc(100vw - 48px));display:none;border:1px solid var(--line);z-index:10}
+.cal.on{display:block;animation:drop .3s cubic-bezier(.2,.8,.2,1)}
+@keyframes drop{from{opacity:0;transform:translateY(-6px)}}
+.cal .ms{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.cal h4{font-weight:500;font-size:16px;margin-bottom:10px;text-transform:none}
+.cal .dw,.cal .days{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center}
+.cal .dw span{font-size:12px;color:var(--muted);padding:4px 0}
+.cal .days button{aspect-ratio:1;border:0;background:none;border-radius:50%;cursor:pointer;font-size:15px;transition:background .15s}
+.cal .days button:hover:not(:disabled){background:var(--cream2)}
+.cal .days button:disabled{color:#b9b4a6;text-decoration:line-through;cursor:not-allowed}
+.cal .days button.in{background:#fde7a6;border-radius:0}
+.cal .days button.s,.cal .days button.e{background:var(--pine);color:#fff;border-radius:50%}
+.cal .leg{display:flex;justify-content:space-between;gap:12px;margin-top:14px;font-size:13px;color:var(--muted);flex-wrap:wrap}
+@media(max-width:1000px){.book{grid-template-columns:1fr 1fr}.go{grid-column:1/-1}.cal .ms{grid-template-columns:1fr}.cal .ms>div:nth-child(2){display:none}}
+@media(max-width:520px){.book{grid-template-columns:1fr;border-radius:28px}.cal{left:0;width:100%}}
+
+section{padding-top:110px}
+h2{font-weight:300;font-size:clamp(36px,4.6vw,62px);letter-spacing:-.05em;line-height:1;color:var(--pine)}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:34px}
+.sh p{max-width:46ch;color:var(--muted)}
+
+.houses{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.house{background:var(--paper);border-radius:var(--R);overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+.house figure{min-height:300px;overflow:hidden}
+.house img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.house:hover img{transform:scale(1.04)}
+.house .b{padding:26px;display:flex;flex-direction:column;gap:8px}
+.house h3{font-weight:500;font-size:22px;letter-spacing:-.03em}
+.house ul{list-style:none;font-size:15px;color:var(--muted);display:grid;gap:3px}
+.house .pr{margin-top:auto;padding-top:14px;display:flex;justify-content:space-between;align-items:end;gap:10px}
+.house .pr b{font-size:24px;font-weight:500;letter-spacing:-.03em}
+.house .pr small{display:block;font-size:13px;color:var(--muted);font-weight:400}
+.pick{background:var(--pine);color:#fff;border:0;border-radius:24px;padding:11px 18px;cursor:pointer;font-weight:500;transition:background .2s}
+.pick:hover{background:var(--pine-d)}
+@media(max-width:1000px){.houses{grid-template-columns:1fr}}
+@media(max-width:560px){.house{grid-template-columns:1fr}.house figure{min-height:220px}}
+
+.extras{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ex{background:var(--paper);border-radius:var(--r);padding:24px}
+.ex svg{width:34px;height:34px;color:var(--pine);margin-bottom:28px}
+.ex h3{font-weight:500;font-size:18px;letter-spacing:-.02em}
+.ex p{font-size:15px;color:var(--muted);margin-top:4px}
+.ex b{display:block;margin-top:14px;font-weight:500}
+@media(max-width:900px){.extras{grid-template-columns:1fr 1fr}}
+
+.mosaic{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:250px 250px;gap:16px}
+.mosaic img{width:100%;height:100%;object-fit:cover;border-radius:var(--r)}
+.mosaic img:first-child{grid-row:span 2;border-radius:var(--R)}
+@media(max-width:800px){.mosaic{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:170px}.mosaic img:first-child{grid-column:span 2;grid-row:auto}}
+
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rv{background:var(--paper);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:14px}
+.rv p{font-size:17px}
+.rv .w{margin-top:auto;font-size:14px;color:var(--muted)}
+.rv .w b{color:var(--char);font-weight:500}
+@media(max-width:900px){.revs{grid-template-columns:1fr}}
+
+.road{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:110px}
+.road .card{background:var(--pine);color:var(--cream);border-radius:var(--R);padding:44px}
+.road .card h2{color:var(--cream)}
+.road .card p{margin-top:16px;opacity:.85;max-width:40ch}
+.road dl{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin-top:28px;font-size:16px}
+.road dt{opacity:.7}
+.road .map{border-radius:var(--R);background:var(--cream2);position:relative;overflow:hidden;min-height:320px}
+.road .map svg{position:absolute;inset:0;width:100%;height:100%}
+.route{stroke-dasharray:900;stroke-dashoffset:900}
+.road.vis .route{animation:dr 2.2s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+@media(max-width:800px){.road{grid-template-columns:1fr}.road .card{padding:28px}}
+
+footer{padding:72px 0 40px;font-size:15px;color:var(--muted)}
+.ft{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:28px}
+.ft b{display:block;color:var(--char);font-weight:500}
+.ft a{text-decoration:none}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,calc(100% + 60px));visibility:hidden;background:var(--pine);color:#fff;padding:14px 24px;border-radius:24px;z-index:60;transition:transform .45s cubic-bezier(.2,.9,.2,1);max-width:calc(100% - 32px);text-align:center}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.route{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<div class="ann">Новогодние даты с 30 декабря по 3 января почти разобраны — осталось два дома. <a href="#book">Проверить даты</a></div>
+<header><div class="wrap hb">
+  <a class="logo" href="#"><svg viewBox="0 0 28 28" fill="currentColor"><path d="M14 2 6 13h4l-5 7h6v6h6v-6h6l-5-7h4z"/></svg>Сосновый берег</a>
+  <nav aria-label="Разделы"><a href="#houses">Дома</a><a href="#extras">На территории</a><a href="#road">Как добраться</a><a href="#reviews">Отзывы</a></nav>
+  <a class="tel" href="tel:+73422590617">+7 (342) 259-06-17</a>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="txt">
+      <h1>Четыре дома в соснах на берегу Сылвы</h1>
+      <p>Сорок минут от Перми, а вокруг только лес и река. Дома с печкой, баня на дровах и тишина.</p>
+      <div class="note"><div><b>от 4 900 ₽</b>за ночь</div><div><b>4,9 ★</b>212 отзывов</div><div><b>с собаками</b>можно</div></div>
+    </div>
+    <div class="ph">
+      <img src="https://images.unsplash.com/photo-1619688137428-851529e61a0f?auto=format&fit=crop&w=1600&q=80" alt="Деревянный дом у озера среди деревьев">
+      <div class="stamp" aria-hidden="true"><svg viewBox="0 0 104 104"><defs><path id="c" d="M52,52 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/></defs><text font-size="9.5" letter-spacing="2.6" fill="#006434"><textPath href="#c">бронируйте напрямую · без наценок · </textPath></text></svg><span><b>−10%</b>с сайта</span></div>
+    </div>
+  </div>
+
+  <form class="book" id="book" autocomplete="off">
+    <button type="button" class="bf" id="fIn"><small>Заезд</small><b id="vIn">Выберите дату</b></button>
+    <button type="button" class="bf" id="fOut"><small>Выезд</small><b id="vOut">—</b></button>
+    <div class="bf"><small>Гости</small><div class="guests"><button type="button" id="gm" aria-label="Меньше гостей">−</button><b id="vG">2</b><button type="button" id="gp" aria-label="Больше гостей">+</button></div></div>
+    <label class="bf"><small>Дом</small><select id="vH">
+      <option value="0">Сосновый домик · до 2</option><option value="1" selected>Дом у реки · до 4</option><option value="2">А-фрейм · до 3</option><option value="3">Большой дом · до 10</option></select></label>
+    <button class="go" type="submit">Забронировать</button>
+    <div class="sum" id="sum"><div><div class="in" id="sumIn"></div></div></div>
+    <div class="cal" id="cal" role="dialog" aria-label="Выбор дат"><div class="ms" id="ms"></div><div class="leg"><span>Зачёркнуты занятые даты</span><span>Пт и Сб дороже на 20%</span></div></div>
+  </form>
+
+  <section id="houses">
+    <div class="sh"><h2>Дома</h2><p>В каждом доме кухня с посудой, душ, тёплый пол, Wi-Fi и мангал на террасе. Постельное бельё и полотенца выдаём.</p></div>
+    <div class="houses">
+      <article class="house"><figure><img src="https://images.unsplash.com/photo-1627750168257-9a7d3965ef8b?auto=format&fit=crop&w=900&q=80" alt="Деревянный дом среди сосен" loading="lazy"></figure><div class="b"><h3>Дом у реки</h3><ul><li>до 4 гостей · 56 м²</li><li>Печь-камин, вид на Сылву</li><li>Две спальни</li></ul><div class="pr"><div><b>7 500 ₽</b><small>за ночь, Пт–Сб 9 000 ₽</small></div><button type="button" class="pick" data-h="1">Выбрать</button></div></div></article>
+      <article class="house"><figure><img src="https://images.unsplash.com/photo-1761782791727-3994283faa88?auto=format&fit=crop&w=900&q=80" alt="Гостиная в доме А-фрейм с видом на лес" loading="lazy"></figure><div class="b"><h3>А-фрейм</h3><ul><li>до 3 гостей · 38 м²</li><li>Панорамное окно в лес</li><li>Спальня на втором ярусе</li></ul><div class="pr"><div><b>6 900 ₽</b><small>за ночь, Пт–Сб 8 300 ₽</small></div><button type="button" class="pick" data-h="2">Выбрать</button></div></div></article>
+      <article class="house"><figure><img src="https://images.unsplash.com/photo-1568729937315-2ef5ee9cf4f2?auto=format&fit=crop&w=900&q=80" alt="Домик с дымом из трубы" loading="lazy"></figure><div class="b"><h3>Сосновый домик</h3><ul><li>до 2 гостей · 24 м²</li><li>Печка, гамак, тишина</li><li>Для пары</li></ul><div class="pr"><div><b>4 900 ₽</b><small>за ночь, Пт–Сб 5 900 ₽</small></div><button type="button" class="pick" data-h="0">Выбрать</button></div></div></article>
+      <article class="house"><figure><img src="https://images.unsplash.com/photo-1761319914911-71b059a655d8?auto=format&fit=crop&w=900&q=80" alt="Уютная гостиная с камином" loading="lazy"></figure><div class="b"><h3>Большой дом</h3><ul><li>до 10 гостей · 140 м²</li><li>4 спальни, большой стол</li><li>Для компании и семьи</li></ul><div class="pr"><div><b>16 000 ₽</b><small>за ночь, Пт–Сб 19 200 ₽</small></div><button type="button" class="pick" data-h="3">Выбрать</button></div></div></article>
+    </div>
+  </section>
+
+  <section id="extras">
+    <div class="sh"><h2>Что ещё есть на берегу</h2><p>Бронируйте вместе с домом или скажите администратору при заезде.</p></div>
+    <div class="extras">
+      <div class="ex"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 30V14L17 5l12 9v16z"/><path d="M13 30v-8h8v8M12 3c1 2-1 3 0 5M17 2c1 2-1 3 0 5"/></svg><h3>Баня на дровах</h3><p>С купелью и выходом к реке</p><b>3 000 ₽ за 3 часа</b></div>
+      <div class="ex"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 22c6 4 22 4 28 0M8 22 14 8h4l6 14M17 3v5"/></svg><h3>Сапы и лодка</h3><p>Спасжилеты в комплекте</p><b>800 ₽ в час</b></div>
+      <div class="ex"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14h26l-3 9H7zM9 23l-3 8M25 23l3 8M12 9c0-2 2-2 2-4M18 9c0-2 2-2 2-4"/></svg><h3>Беседка с мангалом</h3><p>Дрова и решётка есть</p><b>Бесплатно</b></div>
+      <div class="ex"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 18c5-6 14-6 20 0-6 6-15 6-20 0zM24 18l6-5v10zM11 17h.1"/></svg><h3>Рыбалка</h3><p>Снасти дадим, место покажем</p><b>Бесплатно</b></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="mosaic">
+      <img src="https://images.unsplash.com/photo-1773579089983-50348cc9abd0?auto=format&fit=crop&w=1200&q=80" alt="Гостиная с окнами на зимний лес" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1773423391716-04e278b07b1b?auto=format&fit=crop&w=700&q=80" alt="Спальня с деревянными стенами" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1762245273803-60affd991e19?auto=format&fit=crop&w=700&q=80" alt="Компания за деревянным столом" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1595521624992-48a59aef95e3?auto=format&fit=crop&w=700&q=80" alt="Деревянный дом в лесу" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1712659604528-b179a3634560?auto=format&fit=crop&w=700&q=80" alt="Баня изнутри" loading="lazy">
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="sh"><h2>Гости пишут</h2><p>Отзывы из Яндекс Карт и 2ГИС.</p></div>
+    <div class="revs">
+      <div class="rv"><p>Приехали на два дня, остались на четыре. Утром туман над рекой, вечером баня и звёзды. Дом чистый, печка топится за 10 минут.</p><div class="w"><b>Ксения</b> · Дом у реки, октябрь</div></div>
+      <div class="rv"><p>Отмечали день рождения в Большом доме, нас было 9. Места хватило всем, стол на 12 человек. Администратор помог с баней и дровами.</p><div class="w"><b>Павел</b> · Большой дом, сентябрь</div></div>
+      <div class="rv"><p>Брали А-фрейм с собакой, никаких доплат. Окно во всю стену, просыпаешься прямо в лесу.</p><div class="w"><b>Анастасия</b> · А-фрейм, ноябрь</div></div>
+    </div>
+  </section>
+
+  <div class="road" id="road">
+    <div class="card">
+      <h2>Как добраться</h2>
+      <p>По асфальту до самых ворот, парковка у каждого дома. Можем встретить в Перми за 1 500 ₽.</p>
+      <dl><dt>Адрес</dt><dd>Пермский край, д. Ключики, ул. Береговая, 12</dd><dt>От Перми</dt><dd>48 км, 40 минут по Сибирскому тракту</dd><dt>Заезд</dt><dd>с 15:00, выезд до 12:00</dd><dt>Телефон</dt><dd>+7 (342) 259-06-17</dd></dl>
+    </div>
+    <div class="map" aria-label="Схема проезда">
+      <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+        <path d="M-20 300 C 120 280 180 330 300 310 S 480 250 640 280" fill="none" stroke="#a6dfff" stroke-width="26" stroke-linecap="round"/>
+        <g fill="#c7d7c0">
+          <circle cx="420" cy="170" r="16"/><circle cx="450" cy="190" r="12"/><circle cx="470" cy="160" r="14"/><circle cx="390" cy="200" r="10"/><circle cx="500" cy="210" r="13"/><circle cx="520" cy="170" r="11"/>
+        </g>
+        <path class="route" d="M60 60 C 160 90 200 150 280 160 S 380 210 445 235" fill="none" stroke="#006434" stroke-width="5" stroke-linecap="round" stroke-dasharray="900"/>
+        <circle cx="60" cy="60" r="8" fill="#1f2a22"/><text x="76" y="54" font-size="16" font-family="Inter Tight" fill="#1f2a22">Пермь</text>
+        <circle cx="445" cy="235" r="11" fill="#fcbd1c" stroke="#006434" stroke-width="3"/><text x="300" y="268" font-size="16" font-family="Inter Tight" font-weight="500" fill="#006434">Сосновый берег</text>
+        <text x="200" y="128" font-size="13" font-family="Inter Tight" fill="#5d6a60">48 км · 40 мин</text>
+      </svg>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap"><div class="ft">
+  <div><b>Сосновый берег</b>Гостевые дома под Пермью</div>
+  <div><b>+7 (342) 259-06-17</b>Администратор с 8:00 до 23:00</div>
+  <div><b>ИП Мальцева О. В.</b>ИНН 590412776830</div>
+  <div>Демо-сайт: компания и данные вымышлены</div>
+</div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const H=[{n:"Сосновый домик",p:4900,max:2},{n:"Дом у реки",p:7500,max:4},{n:"А-фрейм",p:6900,max:3},{n:"Большой дом",p:16000,max:10}];
+const today=new Date(2026,10,15);
+const pad=d=>d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+// занятые даты (одинаковые для демо)
+const busy=new Set();
+[[2026,10,20],[2026,10,21],[2026,10,22],[2026,10,28],[2026,10,29],[2026,11,5],[2026,11,6],[2026,11,12],[2026,11,13],[2026,11,19],[2026,11,20],[2026,11,30],[2026,11,31]].forEach(([y,m,d])=>busy.add(pad(new Date(y,m,d))));
+let a=null,b=null,g=2,picking='in';
+const fmt=n=>Math.round(n).toLocaleString('ru-RU');
+const MN=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+const MI=['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+const human=d=>d.getDate()+' '+MN[d.getMonth()];
+const cal=document.getElementById('cal'),ms=document.getElementById('ms');
+function render(){
+  ms.innerHTML='';
+  for(let k=0;k<2;k++){const m=new Date(today.getFullYear(),today.getMonth()+k,1);const box=document.createElement('div');
+    box.innerHTML=`<h4>${MI[m.getMonth()]} ${m.getFullYear()}</h4><div class="dw">${['Пн','Вт','Ср','Чт','Пт','Сб','Вс'].map(x=>`<span>${x}</span>`).join('')}</div>`;
+    const days=document.createElement('div');days.className='days';
+    const off=(m.getDay()+6)%7;for(let i=0;i<off;i++)days.appendChild(document.createElement('span'));
+    const last=new Date(m.getFullYear(),m.getMonth()+1,0).getDate();
+    for(let d=1;d<=last;d++){const dt=new Date(m.getFullYear(),m.getMonth(),d);const bt=document.createElement('button');bt.type='button';bt.textContent=d;
+      bt.disabled=dt<today||busy.has(pad(dt));
+      if(a&&+dt===+a)bt.classList.add('s');if(b&&+dt===+b)bt.classList.add('e');if(a&&b&&dt>a&&dt<b)bt.classList.add('in');
+      bt.onclick=()=>choose(dt);days.appendChild(bt)}
+    box.appendChild(days);ms.appendChild(box)}
+}
+function choose(dt){
+  if(picking==='in'||!a||dt<=a){a=dt;b=null;picking='out'}
+  else{let ok=true;for(let x=new Date(a);x<dt;x.setDate(x.getDate()+1))if(busy.has(pad(x)))ok=false;
+    if(!ok){a=dt;b=null;picking='out'}else{b=dt;picking='in';setTimeout(()=>{cal.classList.remove('on');sync()},180)}}
+  render();sync(false);
+}
+function sync(show=true){
+  document.getElementById('vIn').textContent=a?human(a):'Выберите дату';
+  document.getElementById('vOut').textContent=b?human(b):'—';
+  document.getElementById('fIn').classList.toggle('on',cal.classList.contains('on')&&picking!=='out');
+  document.getElementById('fOut').classList.toggle('on',cal.classList.contains('on')&&picking==='out');
+  if(show&&a&&b)quote();
+}
+function quote(){
+  const h=H[+document.getElementById('vH').value];let s=0,n=0;
+  for(let x=new Date(a);x<b;x.setDate(x.getDate()+1)){n++;const wd=x.getDay();s+=h.p*((wd===5||wd===6)?1.2:1)}
+  const disc=Math.round(s*.1),box=document.getElementById('sumIn');
+  box.innerHTML=g>h.max?`<span class="err">В доме «${h.n}» помещается до ${h.max} гостей. Выберите дом побольше.</span>`
+    :`<div class="tot">${fmt(s-disc)} ₽<small>${n} ${n===1?'ночь':n<5?'ночи':'ночей'} · скидка 10% с сайта −${fmt(disc)} ₽</small></div><span>${h.n} · ${human(a)} — ${human(b)} · ${g} ${g===1?'гость':g<5?'гостя':'гостей'}</span>`;
+  document.getElementById('sum').classList.add('on');
+}
+document.getElementById('fIn').onclick=()=>{picking='in';cal.classList.add('on');render();sync(false)};
+document.getElementById('fOut').onclick=()=>{picking=a?'out':'in';cal.classList.add('on');render();sync(false)};
+document.addEventListener('click',e=>{if(!e.target.closest('#cal')&&!e.target.closest('#fIn')&&!e.target.closest('#fOut')&&cal.classList.contains('on')){cal.classList.remove('on');sync(false)}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')cal.classList.remove('on')});
+document.getElementById('gm').onclick=()=>{g=Math.max(1,g-1);document.getElementById('vG').textContent=g;if(a&&b)quote()};
+document.getElementById('gp').onclick=()=>{g=Math.min(10,g+1);document.getElementById('vG').textContent=g;if(a&&b)quote()};
+document.getElementById('vH').onchange=()=>{if(a&&b)quote()};
+document.querySelectorAll('.pick').forEach(p=>p.onclick=()=>{document.getElementById('vH').value=p.dataset.h;document.getElementById('book').scrollIntoView({behavior:'smooth',block:'center'});if(a&&b)quote();else setTimeout(()=>document.getElementById('fIn').click(),500)});
+const t=document.getElementById('toast');
+document.getElementById('book').onsubmit=e=>{e.preventDefault();
+  if(!a||!b){picking=a?'out':'in';cal.classList.add('on');render();sync(false);return}
+  quote();if(g>H[+document.getElementById('vH').value].max)return;
+  t.textContent='Даты придержали на 30 минут. Администратор позвонит для подтверждения.';t.classList.add('on');setTimeout(()=>t.classList.remove('on'),4800)};
+// маршрут рисуется, когда блок появляется на экране
+new IntersectionObserver((es,o)=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');o.disconnect()}}),{threshold:.35}).observe(document.getElementById('road'));
+render();
+</script>
+</body>
+</html>

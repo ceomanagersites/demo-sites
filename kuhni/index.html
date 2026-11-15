@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Линия — кухни на заказ в Самаре</title>
+<meta name="description" content="Кухни на заказ по вашим размерам за 25 дней. Бесплатный замер и 3D-проект, своё производство в Самаре.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f7f7;--white:#fff;--tone:#efefed;--tone2:#e6e5e2;--ink:#181825;--black:#000;--graph:#484758;--muted:#8a8996;--line:#e2e2e0;--tag:#f69251;--tag-d:#e57d3a;--pill:28px;--f:"Manrope",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--f);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:var(--pill);background:var(--tag);color:#1b1206;font-weight:600;padding:15px 28px;text-decoration:none;cursor:pointer;transition:background .2s,transform .15s}
+.btn:hover{background:var(--tag-d)}
+.btn:active{transform:scale(.97)}
+.link{font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+
+header .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-weight:600;font-size:20px;letter-spacing:-.01em}
+.logo span{font-weight:300;color:var(--muted);font-size:14px}
+header nav{display:flex;gap:30px}
+header nav a{text-decoration:none;font-weight:500;font-size:15px;color:var(--graph)}
+header nav a:hover{color:var(--black)}
+.htel{font-weight:600;text-decoration:none;white-space:nowrap}
+@media(max-width:900px){header nav{display:none}.logo span{display:none}}
+@media(max-width:520px){.htel{font-size:14px}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;align-items:stretch;padding-top:24px}
+.hero-txt{background:var(--white);padding:56px 48px;display:flex;flex-direction:column}
+.hero h1{font-weight:200;font-size:clamp(46px,5.6vw,78px);line-height:1.02;letter-spacing:-.035em;color:var(--black)}
+.hero-txt p{color:var(--graph);font-size:18px;max-width:38ch;margin-top:26px}
+.hero-txt .acts{margin-top:auto;padding-top:40px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.hero-pic{position:relative;min-height:560px;background:var(--tone)}
+.hero-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* ценник */
+.tag{position:absolute;top:34px;right:34px;transform-origin:50% -22px;background:var(--tag);color:#1b1206;padding:18px 22px 16px;border-radius:10px 10px 10px 10px;box-shadow:0 18px 40px rgba(60,30,0,.22);animation:swing 1.8s cubic-bezier(.3,.7,.2,1) .4s both}
+.tag::before{content:"";position:absolute;top:-22px;left:50%;width:1px;height:22px;background:#3a2a1a}
+.tag::after{content:"";position:absolute;top:8px;left:50%;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:var(--bg)}
+.tag small{display:block;font-size:12px;font-weight:500;opacity:.8;margin-top:6px}
+.tag b{display:block;font-weight:300;font-size:34px;letter-spacing:-.03em;line-height:1;margin-top:8px}
+@keyframes swing{0%{transform:translateY(-140px) rotate(0)}35%{transform:translateY(0) rotate(14deg)}55%{transform:rotate(-8deg)}72%{transform:rotate(4deg)}86%{transform:rotate(-1.5deg)}100%{transform:rotate(0)}}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-pic{min-height:380px;order:-1}.hero-txt{padding:32px 22px}}
+
+.facts{display:grid;grid-template-columns:repeat(4,1fr);background:var(--white);margin-top:28px}
+.facts div{padding:24px 28px;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-weight:300;font-size:36px;letter-spacing:-.03em;color:var(--black)}
+.facts span{color:var(--graph);font-size:14px}
+@media(max-width:800px){.facts{grid-template-columns:1fr 1fr}.facts div:nth-child(2){border-right:0}.facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+section{padding-top:110px}
+h2{font-weight:200;font-size:clamp(36px,4.4vw,60px);letter-spacing:-.035em;line-height:1.05;color:var(--black)}
+.sh{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:end;margin-bottom:36px}
+.sh p{color:var(--graph);max-width:50ch}
+@media(max-width:800px){.sh{grid-template-columns:1fr}}
+
+/* планировщик */
+.planner{display:grid;grid-template-columns:1.35fr 1fr;background:var(--white)}
+.plan{background:var(--tone);padding:28px;display:grid;place-items:center;min-height:460px;position:relative}
+.plan svg{width:100%;max-width:640px;height:auto;overflow:visible}
+.plan .dim{position:absolute;left:24px;bottom:18px;font-size:13px;color:var(--graph)}
+.mod{transform-box:fill-box;transform-origin:center;animation:pop .45s cubic-bezier(.2,.9,.3,1.2) both;animation-delay:var(--d)}
+@keyframes pop{from{opacity:0;transform:scale(.6)}}
+.pctl{padding:36px 34px;display:flex;flex-direction:column;gap:24px}
+.lbl{font-size:13px;color:var(--muted);font-weight:500;margin-bottom:10px;display:flex;justify-content:space-between}
+.lbl b{color:var(--ink);font-weight:600}
+.seg{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.seg button{border:1px solid var(--line);background:var(--bg);padding:12px 14px;text-align:left;cursor:pointer;display:flex;gap:12px;align-items:center;transition:border-color .2s,background .2s}
+.seg button svg{width:30px;height:30px;flex:none}
+.seg button[aria-pressed=true]{border-color:var(--black);background:var(--white)}
+.seg button:hover{border-color:var(--graph)}
+.mats{display:flex;gap:10px;flex-wrap:wrap}
+.mats button{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:var(--pill);padding:7px 16px 7px 7px;background:var(--bg);cursor:pointer}
+.mats button i{width:26px;height:26px;border-radius:50%;display:block;border:1px solid rgba(0,0,0,.08)}
+.mats button[aria-pressed=true]{border-color:var(--black);background:var(--white)}
+input[type=range]{width:100%;accent-color:var(--black)}
+.psum{margin-top:auto;border-top:1px solid var(--line);padding-top:22px}
+.psum .v{font-weight:200;font-size:54px;letter-spacing:-.04em;line-height:1;color:var(--black)}
+.psum .s{color:var(--graph);font-size:14px;margin:8px 0 18px}
+@media(max-width:520px){.seg button{padding:10px;gap:8px;font-size:14px}.seg button svg{width:22px;height:22px}}
+@media(max-width:900px){.planner{grid-template-columns:1fr}.plan{min-height:300px;padding:16px}.pctl{padding:26px 20px}}
+
+/* работы */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.wk{background:var(--white)}
+.wk figure{aspect-ratio:4/5;overflow:hidden;background:var(--tone)}
+.wk:nth-child(2) figure{aspect-ratio:4/4.2}
+.wk img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.wk:hover img{transform:scale(1.035)}
+.wk .c{padding:18px 20px 22px;display:grid;grid-template-columns:1fr auto;gap:2px 16px}
+.wk h3{font-weight:500;font-size:17px}
+.wk .pr{font-weight:600;white-space:nowrap}
+.wk span{color:var(--graph);font-size:14px;grid-column:1/-1}
+@media(max-width:900px){.works{grid-template-columns:1fr;gap:20px}}
+
+/* что входит */
+.incl{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--white)}
+.incl div{padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.incl div:nth-child(3n){border-right:0}
+.incl div:nth-last-child(-n+3){border-bottom:0}
+.incl h3{font-weight:500;font-size:19px;margin-bottom:8px}
+.incl p{color:var(--graph);font-size:15px}
+@media(max-width:800px){.incl{grid-template-columns:1fr}.incl div{border-right:0!important;border-bottom:1px solid var(--line)!important}.incl div:last-child{border-bottom:0!important}}
+
+.revs{display:grid;grid-template-columns:1.3fr 1fr;gap:28px}
+.big-q{background:var(--white);padding:40px}
+.big-q q{font-weight:200;font-size:clamp(24px,2.6vw,34px);line-height:1.3;letter-spacing:-.02em;quotes:none;color:var(--black)}
+.big-q .w{margin-top:28px;color:var(--graph);font-size:15px}
+.sm{display:grid;gap:28px}
+.sm div{background:var(--white);padding:28px}
+.sm p{font-size:16px}
+.sm .w{color:var(--graph);font-size:14px;margin-top:14px}
+@media(max-width:800px){.revs{grid-template-columns:1fr}}
+
+.order{display:grid;grid-template-columns:1fr 1fr;background:var(--white);margin-top:110px}
+.order .l{padding:56px 48px}
+.order .l p{color:var(--graph);margin-top:18px;max-width:40ch}
+.order form{padding:56px 48px;background:var(--tone);display:grid;gap:14px;align-content:start}
+.fld{display:grid;gap:6px}
+.fld label{font-size:13px;color:var(--muted);font-weight:500}
+.fld input,.fld select{background:var(--white);border:1px solid var(--line);padding:14px 16px;outline:none}
+.fld input:focus,.fld select:focus{border-color:var(--black)}
+.order .btn{margin-top:6px}
+@media(max-width:800px){.order{grid-template-columns:1fr}.order .l,.order form{padding:32px 20px}}
+
+footer{padding:56px 0 40px;color:var(--graph);font-size:14px}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px;border-top:1px solid var(--line);padding-top:28px}
+.ft b{display:block;color:var(--ink);font-weight:600}
+.ft a{text-decoration:none}
+@media(max-width:800px){.ft{grid-template-columns:1fr 1fr}}
+
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,calc(100% + 60px));visibility:hidden;background:var(--black);color:#fff;padding:14px 24px;border-radius:var(--pill);z-index:60;transition:transform .45s cubic-bezier(.2,.9,.2,1);max-width:calc(100% - 32px);text-align:center}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#">Линия <span>кухонная мастерская</span></a>
+    <nav aria-label="Разделы"><a href="#planner">Рассчитать кухню</a><a href="#works">Работы</a><a href="#incl">Что входит</a><a href="#order">Контакты</a></nav>
+    <a class="htel" href="tel:+78462270391">+7 (846) 227-03-91</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="hero-txt">
+      <h1>Кухня по размерам вашей стены</h1>
+      <p>Делаем кухни на своём производстве в Самаре за 25 рабочих дней. Замер и 3D-проект бесплатно, цена в договоре не меняется.</p>
+      <div class="acts"><a class="btn" href="#order">Вызвать замерщика</a><a class="link" href="#planner">Рассчитать свою кухню</a></div>
+    </div>
+    <div class="hero-pic">
+      <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1600&q=80" alt="Светлая кухня с островом">
+      <div class="tag" aria-label="Цена от 38 000 рублей за погонный метр">Кухня на фото<b>от 38 000 ₽</b><small>за погонный метр</small></div>
+    </div>
+  </div>
+  <div class="facts">
+    <div><b>25 дней</b><span>от договора до сборки</span></div>
+    <div><b>1 400+</b><span>кухонь с 2013 года</span></div>
+    <div><b>5 лет</b><span>гарантия на корпус и фасады</span></div>
+    <div><b>4,9</b><span>в 2ГИС, 276 отзывов</span></div>
+  </div>
+
+  <section id="planner">
+    <div class="sh"><h2>Прикиньте цену своей кухни</h2><p>Выберите форму и длину стен — посчитаем стоимость с фасадами, столешницей, фурнитурой Blum и сборкой. Точную цену назовёт дизайнер на замере.</p></div>
+    <div class="planner">
+      <div class="plan"><svg id="plan" viewBox="0 0 640 460" role="img" aria-label="План кухни сверху"></svg><span class="dim" id="dim"></span></div>
+      <div class="pctl">
+        <div>
+          <div class="lbl">Форма кухни</div>
+          <div class="seg" role="group" aria-label="Форма кухни">
+            <button type="button" data-l="line" aria-pressed="true"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="24" height="6"/></svg>Прямая</button>
+            <button type="button" data-l="corner" aria-pressed="false"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h24v6H9v16H3z"/></svg>Угловая</button>
+            <button type="button" data-l="u" aria-pressed="false"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h24v22h-6V10H9v16H3z"/></svg>П-образная</button>
+            <button type="button" data-l="island" aria-pressed="false"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="24" height="6"/><rect x="8" y="17" width="14" height="7"/></svg>С островом</button>
+          </div>
+        </div>
+        <div><div class="lbl"><span>Главная стена</span><b id="aOut">3,2 м</b></div><input type="range" id="a" min="1.8" max="5" step=".1" value="3.2"></div>
+        <div id="bWrap" hidden><div class="lbl"><span>Боковая стена</span><b id="bOut">2,0 м</b></div><input type="range" id="b" min="1" max="3.5" step=".1" value="2"></div>
+        <div>
+          <div class="lbl">Фасады</div>
+          <div class="mats" role="group" aria-label="Фасады">
+            <button type="button" data-m="ldsp" aria-pressed="true"><i style="background:#e9e6df"></i>ЛДСП Egger</button>
+            <button type="button" data-m="emal" aria-pressed="false"><i style="background:#cfd6cf"></i>Эмаль</button>
+            <button type="button" data-m="shpon" aria-pressed="false"><i style="background:linear-gradient(135deg,#a07a55,#7d5a3c)"></i>Шпон дуба</button>
+          </div>
+        </div>
+        <div class="psum">
+          <div class="v"><span id="sum">0</span> ₽</div>
+          <div class="s" id="ssub"></div>
+          <a class="btn" href="#order" style="width:100%">Получить 3D-проект бесплатно</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="works">
+    <div class="sh"><h2>Кухни, которые мы собрали этой осенью</h2><p>Цены из договоров, вместе с техникой их нет.</p></div>
+    <div class="works">
+      <article class="wk"><figure><img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=900&q=80" alt="Кухня с деревянными фасадами" loading="lazy"></figure><div class="c"><h3>Угловая, шпон дуба</h3><b class="pr">412 000 ₽</b><span>4,1 м + 2,3 м · ЖК «Волгарь»</span></div></article>
+      <article class="wk"><figure><img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?auto=format&fit=crop&w=900&q=80" alt="Белая кухня" loading="lazy"></figure><div class="c"><h3>Прямая, белая эмаль</h3><b class="pr">186 000 ₽</b><span>3,4 м · Октябрьский район</span></div></article>
+      <article class="wk"><figure><img src="https://images.unsplash.com/photo-1622372738946-62e02505feb3?auto=format&fit=crop&w=900&q=80" alt="Кухня с деревом и бирюзовым стулом" loading="lazy"></figure><div class="c"><h3>С островом, ЛДСП Egger</h3><b class="pr">298 000 ₽</b><span>3,8 м + остров 1,6 м · Дом в Царевщине</span></div></article>
+    </div>
+  </section>
+
+  <section id="incl">
+    <div class="sh"><h2>Что уже входит в цену</h2><p>Не будет сюрпризов вроде «а петли с доводчиком за отдельную плату».</p></div>
+    <div class="incl">
+      <div><h3>Замер и 3D-проект</h3><p>Дизайнер приедет с образцами, через 2 дня пришлёт проект с видами со всех сторон.</p></div>
+      <div><h3>Фурнитура Blum</h3><p>Петли и ящики с доводчиками, гарантия от производителя — 20 лет.</p></div>
+      <div><h3>Столешница</h3><p>Кварцевый агломерат или HPL-пластик толщиной 38 мм, под размер.</p></div>
+      <div><h3>Доставка и подъём</h3><p>По Самаре и Тольятти, на любой этаж, даже без лифта.</p></div>
+      <div><h3>Сборка за 1–2 дня</h3><p>Врезаем мойку и варочную панель, подключаем технику.</p></div>
+      <div><h3>Гарантия 5 лет</h3><p>Если что-то разболтается или отклеится, приедем и исправим.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sh"><h2>Отзывы</h2><p>Все 276 отзывов можно почитать в 2ГИС.</p></div>
+    <div class="revs">
+      <div class="big-q"><q>Кухня встала в нишу 3,46 м идеально, зазор с каждой стороны — 3 мм. На замере дизайнер нашёл трубу, которую мы не заметили, и обошёл её коробом.</q><div class="w">Екатерина и Сергей · угловая кухня, эмаль</div></div>
+      <div class="sm">
+        <div><p>Пообещали 25 дней — собрали на 23-й. Проект меняли три раза, в цене это не отразилось.</p><div class="w">Алексей · прямая кухня, 3,2 м</div></div>
+        <div><p>Через полгода подтянули петли и поменяли один ящик, всё бесплатно и без лишних вопросов.</p><div class="w">Ирина · кухня с островом</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="order" id="order">
+    <div class="l"><h2>Замер и 3D-проект бесплатно</h2><p>Оставьте телефон: дизайнер перезвонит сегодня, договоритесь о времени замера. Можно приехать и в шоурум на Московском шоссе.</p></div>
+    <form id="form">
+      <div class="fld"><label for="n">Имя</label><input id="n" required placeholder="Как к вам обращаться"></div>
+      <div class="fld"><label for="p">Телефон</label><input id="p" type="tel" required placeholder="+7 (900) 000-00-00"></div>
+      <div class="fld"><label for="w">Когда нужна кухня</label><select id="w"><option>В течение месяца</option><option>Через 1–3 месяца</option><option>Пока выбираю</option></select></div>
+      <button class="btn" type="submit">Вызвать замерщика</button>
+      <p style="font-size:13px;color:var(--muted)">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+    </form>
+  </div>
+</main>
+
+<footer class="wrap">
+  <div class="ft">
+    <div><b>Линия</b>Кухни на заказ в Самаре и Тольятти</div>
+    <div><b>+7 (846) 227-03-91</b>Пн–Сб 9:00–20:00</div>
+    <div><b>Шоурум</b>Московское шоссе, 18-й км, 25</div>
+    <div><b>ООО «Линия Мебель»</b>ИНН 6316254810</div>
+  </div>
+  <p style="margin-top:24px">Демо-сайт: компания и данные вымышлены.</p>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const NS="http://www.w3.org/2000/svg",svg=document.getElementById('plan');
+const M={ldsp:{n:"ЛДСП Egger",r:38000,c:"#e9e6df"},emal:{n:"эмаль",r:52000,c:"#cfd6cf"},shpon:{n:"шпон дуба",r:64000,c:"#9b7652"}};
+let L="line",mat="ldsp",shown=0;
+const fmt=n=>Math.round(n).toLocaleString('ru-RU'),ru=v=>v.toFixed(1).replace('.',',');
+function el(t,a){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e}
+function draw(){
+  const a=+document.getElementById('a').value,b=+document.getElementById('b').value;
+  const sc=Math.min(560/5,110),x0=40,y0=30,depth=.6*sc,W=a*sc,H=(L==="line"||L==="island")?3.4*sc:Math.max(b+1.2,3)*sc;
+  svg.innerHTML="";
+  svg.appendChild(el('rect',{x:x0,y:y0,width:W,height:Math.min(H,400),fill:"#fafaf8",stroke:"#181825","stroke-width":3}));
+  const runs=[];
+  runs.push({x:x0,y:y0,len:W,dir:"h"});
+  if(L==="corner"||L==="u")runs.push({x:x0,y:y0+depth,len:b*sc-depth,dir:"v"});
+  if(L==="u")runs.push({x:x0+W-depth,y:y0+depth,len:b*sc-depth,dir:"v"});
+  let i=0;const step=.6*sc;
+  runs.forEach(r=>{const n=Math.max(1,Math.round(r.len/step)),s=r.len/n;
+    for(let k=0;k<n;k++){const g=r.dir==="h"?el('rect',{x:r.x+k*s,y:r.y,width:s,height:depth}):el('rect',{x:r.x,y:r.y+k*s,width:depth,height:s});
+      g.setAttribute('fill',M[mat].c);g.setAttribute('stroke','#181825');g.setAttribute('stroke-width',1.2);g.classList.add('mod');g.style.setProperty('--d',(i++*.04)+'s');svg.appendChild(g)}});
+  // мойка и плита на главной стене
+  const sink=el('rect',{x:x0+W*.3,y:y0+10,width:.5*sc,height:depth-22,rx:8,fill:"#fff",stroke:"#181825","stroke-width":1.2});sink.classList.add('mod');sink.style.setProperty('--d',(i*.04)+'s');svg.appendChild(sink);
+  [[.68,.3],[.68,.7],[.82,.3],[.82,.7]].forEach(([u,v])=>{const c=el('circle',{cx:x0+W*u,cy:y0+depth*v,r:9,fill:"none",stroke:"#181825","stroke-width":1.2});c.classList.add('mod');c.style.setProperty('--d',(i*.04+.1)+'s');svg.appendChild(c)});
+  let meters=a+(L==="corner"?b-.6:0)+(L==="u"?2*(b-.6):0);
+  if(L==="island"){const iw=Math.min(1.8,a*.5)*sc,ix=x0+(W-iw)/2,iy=y0+depth+1.3*sc;const r=el('rect',{x:ix,y:iy,width:iw,height:.9*sc,fill:M[mat].c,stroke:"#181825","stroke-width":1.2});r.classList.add('mod');r.style.setProperty('--d',(i*.04+.15)+'s');svg.appendChild(r);meters+=Math.min(1.8,a*.5)*1.4}
+  svg.setAttribute('viewBox',`0 0 ${x0*2+W} ${Math.min(H,400)+y0*2}`);
+  document.getElementById('dim').textContent=L==="line"?`${ru(a)} м`:L==="island"?`${ru(a)} м + остров`:`${ru(a)} × ${ru(b)} м`;
+  const target=Math.round(meters*M[mat].r/1000)*1000,from=shown,st=performance.now();
+  const go=n=>{const q=Math.min(1,(n-st)/500);shown=from+(target-from)*(1-Math.pow(1-q,3));document.getElementById('sum').textContent=fmt(shown);if(q<1)requestAnimationFrame(go)};requestAnimationFrame(go);
+  document.getElementById('ssub').textContent=`${ru(meters)} пог. м · фасады ${M[mat].n} · с монтажом и столешницей`;
+  document.getElementById('aOut').textContent=ru(a)+' м';document.getElementById('bOut').textContent=ru(b)+' м';
+  document.getElementById('bWrap').hidden=!(L==="corner"||L==="u");
+}
+document.querySelectorAll('[data-l]').forEach(btn=>btn.onclick=()=>{L=btn.dataset.l;document.querySelectorAll('[data-l]').forEach(x=>x.setAttribute('aria-pressed',x===btn));draw()});
+document.querySelectorAll('[data-m]').forEach(btn=>btn.onclick=()=>{mat=btn.dataset.m;document.querySelectorAll('[data-m]').forEach(x=>x.setAttribute('aria-pressed',x===btn));draw()});
+document.getElementById('a').oninput=draw;document.getElementById('b').oninput=draw;
+draw();
+const t=document.getElementById('toast');
+document.getElementById('form').onsubmit=e=>{e.preventDefault();t.textContent='Спасибо! Дизайнер перезвонит сегодня.';t.classList.add('on');e.target.reset();setTimeout(()=>t.classList.remove('on'),4200)};
+</script>
+</body>
+</html>

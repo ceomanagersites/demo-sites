@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Плоскость — натяжные потолки в Новосибирске</title>
+<meta name="description" content="Натяжные потолки за один день: матовые, парящие, со световыми линиями. Бесплатный замер по Новосибирску, гарантия 12 лет.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@200;300;400;500&family=PT+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f6f4; --white:#fff; --ink:#000; --graphite:#808080; --warm:#dbdad9; --soft:#ecebe9;
+  --sans:"Geologica",system-ui,sans-serif; --mono:"PT Mono",ui-monospace,monospace;
+  --pill:999px; --r:7px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:300 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.mono{font:400 12px/1.4 var(--mono);color:var(--graphite);letter-spacing:.02em}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--warm)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.logo{font-weight:400;font-size:20px;letter-spacing:-.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:22px;height:14px;border:1.5px solid var(--ink);border-top-width:4px;display:inline-block}
+.nav ul{display:flex;gap:28px;list-style:none}
+.nav ul a{text-decoration:none;font-size:15px}
+.nav ul a:hover{text-decoration:underline;text-underline-offset:4px}
+.nav .tel{font-weight:400;text-decoration:none;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:var(--pill);padding:14px 26px;border:1px solid var(--ink);background:var(--ink);color:var(--white);text-decoration:none;font-weight:400;cursor:pointer;transition:background .2s,color .2s,transform .15s}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--white)}
+@media(max-width:900px){.nav ul{display:none}}
+@media(max-width:520px){.nav .tel{display:none}.nav .btn{padding:10px 16px;font-size:14px;white-space:nowrap}.logo{font-size:18px}}
+
+/* hero */
+.hero{padding:72px 0 40px;text-align:center}
+.hero h1{font-weight:200;font-size:clamp(44px,8.6vw,128px);line-height:.98;letter-spacing:-.045em;max-width:12ch;margin:0 auto}
+.hero p.lead{max-width:46ch;margin:28px auto 0;color:#333}
+.hero .cta{display:flex;gap:12px;justify-content:center;margin-top:32px;flex-wrap:wrap}
+
+/* room configurator */
+.studio{margin-top:56px;background:var(--white);border-radius:var(--r) var(--r) 40px var(--r);border:1px solid var(--warm);overflow:hidden}
+.studio-grid{display:grid;grid-template-columns:1.55fr 1fr}
+.room{position:relative;background:#e9e7e3;aspect-ratio:12/8;overflow:hidden}
+@media(min-width:901px){.room{aspect-ratio:auto;min-height:480px}.room svg{position:absolute;inset:0}}
+.room svg{width:100%;height:100%;display:block}
+.room .tag{position:absolute;left:16px;bottom:14px}
+.ctl{padding:28px;display:flex;flex-direction:column;gap:22px;text-align:left;border-left:1px solid var(--warm)}
+.ctl h2{font-weight:300;font-size:28px;letter-spacing:-.02em;line-height:1.1}
+.types{display:flex;flex-wrap:wrap;gap:8px}
+.types button{border:1px solid var(--warm);background:var(--paper);border-radius:var(--pill);padding:9px 15px;cursor:pointer;font-size:15px;transition:background .2s,border-color .2s,color .2s}
+.types button[aria-pressed=true]{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.types button:hover{border-color:var(--ink)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+input[type=range]{width:100%;accent-color:#000;height:28px}
+.stepper{display:flex;align-items:center;border:1px solid var(--warm);border-radius:var(--pill)}
+.stepper button{width:40px;height:40px;border:0;background:none;cursor:pointer;font-size:20px}
+.stepper output{min-width:28px;text-align:center}
+.total{border-top:1px solid var(--warm);padding-top:20px;margin-top:auto}
+.total .sum{font-weight:200;font-size:56px;letter-spacing:-.04em;line-height:1}
+.total .sum small{font-size:22px;letter-spacing:0}
+.desc{font-size:15px;color:#444;min-height:3.1em}
+@media(max-width:900px){.studio-grid{grid-template-columns:1fr}.ctl{border-left:0;border-top:1px solid var(--warm)}}
+
+/* svg room parts */
+.ceil{transition:fill .6s}
+.lines line{stroke:#fff;stroke-width:7;stroke-linecap:round;filter:url(#glow);opacity:0;transition:opacity .5s}
+.stars circle{fill:#fff;opacity:0;transition:opacity .6s}
+.gap path{fill:none;stroke:#fff;stroke-width:4;filter:url(#glow);opacity:0;transition:opacity .6s}
+.gloss{opacity:0;transition:opacity .7s}
+.room[data-t=gloss] .gloss{opacity:1}
+.room[data-t=float] .gap path{opacity:1}
+.room[data-t=lines] .lines line{opacity:1}
+.room[data-t=stars] .stars circle{opacity:var(--o,1);animation:tw 3s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes tw{50%{opacity:.25}}
+.draw{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 1.4s cubic-bezier(.6,0,.2,1) forwards;animation-delay:var(--dl,0s)}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* sections */
+section{padding:110px 0 0}
+.sec-head{display:grid;grid-template-columns:1fr 1.4fr;gap:32px;align-items:end;margin-bottom:44px}
+.sec-head h2{font-weight:200;font-size:clamp(36px,5vw,68px);letter-spacing:-.04em;line-height:1}
+.sec-head p{color:#444;max-width:52ch}
+@media(max-width:800px){.sec-head{grid-template-columns:1fr}}
+
+.works{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.work{grid-column:span 4;background:var(--white);border:1px solid var(--warm);border-radius:var(--r) var(--r) 28px var(--r);overflow:hidden}
+.work.big{grid-column:span 8}
+.work figure{overflow:hidden;aspect-ratio:4/3}
+.work.big figure{aspect-ratio:auto;height:100%;max-height:520px}
+.work img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.work:hover img{transform:scale(1.04)}
+.work .cap{padding:16px 18px;display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.work .cap b{font-weight:400}
+.work.big{display:grid;grid-template-rows:1fr auto}
+@media(max-width:900px){.work,.work.big{grid-column:span 12}}
+
+table{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--warm);border-radius:var(--r);overflow:hidden}
+th,td{text-align:left;padding:18px 20px;border-bottom:1px solid var(--warm);vertical-align:top}
+th{font:400 12px var(--mono);color:var(--graphite)}
+td:last-child,th:last-child{text-align:right;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td b{font-weight:400;display:block}
+td span{font-size:14px;color:#555}
+.note{margin-top:14px}
+@media(max-width:600px){th:nth-child(2),td:nth-child(2){display:none}th,td{padding:14px 12px}td:last-child{white-space:normal;min-width:84px}}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
+.step{padding:22px 22px 0 0}
+.step .mono{display:block;margin-bottom:28px}
+.step h3{font-weight:400;font-size:20px;letter-spacing:-.01em;margin-bottom:8px}
+.step p{color:#444;font-size:15px}
+@media(max-width:800px){.steps{grid-template-columns:1fr 1fr;gap:0 16px}.step{padding-bottom:24px}}
+
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev{background:var(--white);border:1px solid var(--warm);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:18px}
+.rev q{font-size:18px;quotes:none;line-height:1.5}
+.rev .who{margin-top:auto;display:flex;justify-content:space-between;gap:12px;font-size:14px}
+@media(max-width:900px){.reviews{grid-template-columns:1fr}}
+
+.faq details{border-bottom:1px solid var(--warm);padding:20px 0}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-size:19px;font-weight:300}
+.faq summary::after{content:"+";font-weight:200;font-size:26px;line-height:1;transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin-top:12px;color:#444;max-width:70ch}
+
+.order{margin:110px 0 0;background:var(--ink);color:var(--white);border-radius:var(--r) var(--r) 56px var(--r);padding:64px 48px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px}
+.order h2{font-weight:200;font-size:clamp(36px,5vw,64px);letter-spacing:-.04em;line-height:1}
+.order p{color:#bbb;margin-top:18px;max-width:40ch}
+.order form{display:grid;gap:12px}
+.field{display:grid;gap:6px}
+.field label{font:400 12px var(--mono);color:#999}
+.field input,.field select{background:transparent;border:1px solid #444;border-radius:var(--r);padding:14px 16px;color:#fff}
+.field select option{color:#000}
+.field input:focus,.field select:focus{border-color:#fff;outline:none}
+.order .btn{background:#fff;color:#000;border-color:#fff;margin-top:6px}
+.order .btn:hover{background:transparent;color:#fff}
+@media(max-width:800px){.order{grid-template-columns:1fr;padding:40px 22px}}
+
+footer{padding:72px 0 40px}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px;border-top:1px solid var(--warm);padding-top:28px;font-size:15px}
+.foot b{font-weight:400;display:block;margin-bottom:6px}
+.foot a{text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.legal{margin-top:40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:800px){.foot{grid-template-columns:1fr 1fr}}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,calc(100% + 60px));visibility:hidden;background:var(--ink);color:#fff;padding:16px 22px;border-radius:var(--pill);z-index:50;transition:transform .5s cubic-bezier(.2,.9,.2,1);max-width:calc(100% - 32px);text-align:center}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.draw{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><i></i>Плоскость</a>
+    <ul>
+      <li><a href="#studio">Подобрать потолок</a></li>
+      <li><a href="#works">Работы</a></li>
+      <li><a href="#prices">Цены</a></li>
+      <li><a href="#faq">Вопросы</a></li>
+    </ul>
+    <a class="tel" href="tel:+73832140517">+7 (383) 214-05-17</a>
+    <a class="btn" href="#order">Вызвать замерщика</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <h1>Потолок, которого не замечаешь</h1>
+    <p class="lead">Натяжные потолки в Новосибирске за один день. Замерщик приедет с образцами бесплатно, точную цену назовём в договоре, и она не изменится.</p>
+    <div class="cta">
+      <a class="btn" href="#order">Вызвать замерщика</a>
+      <a class="btn ghost" href="#studio">Посчитать стоимость</a>
+    </div>
+
+    <div class="studio" id="studio">
+      <div class="studio-grid">
+        <div class="room" id="room" data-t="matte">
+          <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Комната с выбранным типом потолка">
+            <defs>
+              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <linearGradient id="gGloss" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".0"/><stop offset=".45" stop-color="#fff" stop-opacity=".55"/><stop offset=".55" stop-color="#fff" stop-opacity=".1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+              <linearGradient id="gFloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfc9c0"/><stop offset="1" stop-color="#b9b1a5"/></linearGradient>
+              <linearGradient id="gWin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfe9ef"/><stop offset="1" stop-color="#f7f3ea"/></linearGradient>
+            </defs>
+            <!-- стены и пол -->
+            <polygon points="0,0 400,340 400,600 0,800" fill="#e2dfda"/>
+            <polygon points="1200,0 800,340 800,600 1200,800" fill="#dcd8d2"/>
+            <rect x="400" y="340" width="400" height="260" fill="#eeebe6"/>
+            <polygon points="0,800 1200,800 800,600 400,600" fill="url(#gFloor)"/>
+            <!-- окно на дальней стене -->
+            <rect x="535" y="372" width="130" height="170" fill="url(#gWin)" stroke="#fff" stroke-width="6"/>
+            <line x1="600" y1="372" x2="600" y2="542" stroke="#fff" stroke-width="5"/>
+            <!-- диван -->
+            <rect x="430" y="560" width="170" height="34" rx="7" fill="#a59c90"/><rect x="430" y="540" width="170" height="28" rx="7" fill="#b5ada1"/>
+            <!-- потолок -->
+            <polygon class="ceil" id="ceil" points="0,0 1200,0 800,340 400,340" fill="#f6f5f3"/>
+            <!-- глянец: отражение окна -->
+            <g class="gloss">
+              <polygon points="0,0 1200,0 800,340 400,340" fill="url(#gGloss)"/>
+              <polygon points="530,150 670,150 652,290 548,290" fill="#dfe9ef" opacity=".55"/>
+            </g>
+            <!-- парящий: светящийся контур -->
+            <g class="gap"><path d="M6,6 L400,340 L800,340 L1194,6"/></g>
+            <g class="lines" id="lines"></g>
+            <g class="stars" id="stars"></g>
+            <!-- линии комнаты (рисуются при загрузке) -->
+            <g fill="none" stroke="#000" stroke-width="1.4">
+              <path class="draw" style="--len:530;--dl:.1s" d="M0,0 L400,340"/>
+              <path class="draw" style="--len:530;--dl:.1s" d="M1200,0 L800,340"/>
+              <path class="draw" style="--len:1400;--dl:.35s" d="M400,340 H800 V600 H400 Z"/>
+              <path class="draw" style="--len:460;--dl:.6s" d="M400,600 L0,800"/>
+              <path class="draw" style="--len:460;--dl:.6s" d="M800,600 L1200,800"/>
+            </g>
+          </svg>
+          <span class="tag mono" id="roomTag">Матовый · 590 ₽ за м²</span>
+        </div>
+        <div class="ctl">
+          <h2>Подберите потолок для комнаты</h2>
+          <div class="types" role="group" aria-label="Тип потолка">
+            <button type="button" data-t="matte" aria-pressed="true">Матовый</button>
+            <button type="button" data-t="gloss" aria-pressed="false">Глянцевый</button>
+            <button type="button" data-t="float" aria-pressed="false">Парящий</button>
+            <button type="button" data-t="lines" aria-pressed="false">Световые линии</button>
+            <button type="button" data-t="stars" aria-pressed="false">Звёздное небо</button>
+          </div>
+          <p class="desc" id="desc">Похож на идеально ровную побелку. Не бликует, подходит для любой комнаты.</p>
+          <div>
+            <div class="row"><label for="area">Площадь комнаты</label><b id="areaOut" style="font-weight:400">18 м²</b></div>
+            <input id="area" type="range" min="4" max="60" value="18">
+          </div>
+          <div class="row">
+            <span>Светильники</span>
+            <div class="stepper"><button type="button" id="lm" aria-label="Меньше светильников">−</button><output id="lamps">6</output><button type="button" id="lp" aria-label="Больше светильников">+</button></div>
+          </div>
+          <div class="total">
+            <div class="mono">Под ключ, с монтажом и материалами</div>
+            <div class="sum"><span id="sum">0</span> <small>₽</small></div>
+            <a class="btn" href="#order" style="margin-top:18px;width:100%">Записаться на замер с этой ценой</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="works">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Недавние работы</h2>
+        <p>Это квартиры наших заказчиков в Новосибирске. Под каждым фото — площадь, тип потолка и итоговая цена из договора.</p>
+      </div>
+      <div class="works">
+        <article class="work big">
+          <figure><img src="https://images.unsplash.com/photo-1613545325268-9265e1609167?auto=format&fit=crop&w=1400&q=80" alt="Светлая гостиная с матовым потолком" loading="lazy"></figure>
+          <div class="cap"><b>Гостиная, ЖК «Европейский берег»</b><span class="mono">32 м² · парящий · 41 300 ₽</span></div>
+        </article>
+        <article class="work">
+          <figure><img src="https://images.unsplash.com/photo-1765862835319-18fb6f8caff6?auto=format&fit=crop&w=900&q=80" alt="Спальня с ровным потолком" loading="lazy"></figure>
+          <div class="cap"><b>Спальня, Академгородок</b><span class="mono">14 м² · матовый · 11 900 ₽</span></div>
+        </article>
+        <article class="work">
+          <figure><img src="https://images.unsplash.com/photo-1763718324622-e14a3f09560e?auto=format&fit=crop&w=900&q=80" alt="Встроенные светильники в потолке" loading="lazy"></figure>
+          <div class="cap"><b>Коридор, Кировский район</b><span class="mono">9 м² · 8 светильников · 9 400 ₽</span></div>
+        </article>
+        <article class="work">
+          <figure><img src="https://images.unsplash.com/photo-1649083048381-520a5b3d91ff?auto=format&fit=crop&w=900&q=80" alt="Кухня-гостиная" loading="lazy"></figure>
+          <div class="cap"><b>Кухня-гостиная, Заельцовский</b><span class="mono">26 м² · световые линии · 52 800 ₽</span></div>
+        </article>
+        <article class="work">
+          <figure><img src="https://images.unsplash.com/photo-1705326701287-346fc37a2c86?auto=format&fit=crop&w=900&q=80" alt="Гостиная с белой мебелью" loading="lazy"></figure>
+          <div class="cap"><b>Гостиная, Октябрьский район</b><span class="mono">22 м² · глянцевый · 19 600 ₽</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="prices">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Цены за м² с монтажом</h2>
+        <p>Полотно, профиль, работа и вывоз мусора уже в цене. Замер и выезд по городу бесплатные.</p>
+      </div>
+      <table>
+        <thead><tr><th>Что делаем</th><th>Срок</th><th>Цена</th></tr></thead>
+        <tbody>
+          <tr><td><b>Матовый потолок</b><span>Немецкое полотно MSD Premium, белый или цветной</span></td><td>1 день</td><td>590 ₽ / м²</td></tr>
+          <tr><td><b>Глянцевый потолок</b><span>Визуально поднимает низкую комнату</span></td><td>1 день</td><td>690 ₽ / м²</td></tr>
+          <tr><td><b>Парящий профиль</b><span>Светодиодная лента по периметру, кажется, что потолок висит в воздухе</span></td><td>1 день</td><td>+ 450 ₽ / пог. м</td></tr>
+          <tr><td><b>Световые линии</b><span>Прорези со светом вместо люстры</span></td><td>1–2 дня</td><td>2 400 ₽ / пог. м</td></tr>
+          <tr><td><b>Звёздное небо</b><span>Оптоволокно, 120 точек на м², пульт с режимами</span></td><td>2 дня</td><td>6 900 ₽ / м²</td></tr>
+          <tr><td><b>Светильник</b><span>Установка с закладной, светодиодная лампа GX53</span></td><td>—</td><td>450 ₽ / шт.</td></tr>
+        </tbody>
+      </table>
+      <p class="mono note">Цена фиксируется в договоре на замере. Минимальный заказ — 9 000 ₽.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Как всё пройдёт</h2>
+        <p>Чаще всего от звонка до готового потолка проходит три дня.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="mono">01 · день 1</span><h3>Замер с образцами</h3><p>Приедем в удобное время, покажем полотна вживую и сразу назовём цену.</p></div>
+        <div class="step"><span class="mono">02 · день 1</span><h3>Договор</h3><p>Фиксируем цену и дату монтажа. Предоплата — 0 ₽, платите после работы.</p></div>
+        <div class="step"><span class="mono">03 · день 2–3</span><h3>Монтаж за 4–6 часов</h3><p>Застилаем мебель, работаем без пыли, мусор забираем с собой.</p></div>
+        <div class="step"><span class="mono">04 · 12 лет</span><h3>Гарантия</h3><p>Если полотно провиснет или потечёт шов — переделаем бесплатно.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Что говорят заказчики</h2>
+        <p>4,9 из 5 в 2ГИС по 214 отзывам.</p>
+      </div>
+      <div class="reviews">
+        <article class="rev"><q>Замерщик приехал в тот же вечер, на следующий день всё сделали за пять часов. Даже плинтуса за собой протёрли.</q><div class="who"><span>Ольга, Академгородок</span><span class="mono">2ГИС · ★ 5</span></div></article>
+        <article class="rev"><q>Сделали парящий потолок в гостиной. Цена в договоре совпала с той, что назвали на замере, копейка в копейку.</q><div class="who"><span>Артём, Кировский район</span><span class="mono">2ГИС · ★ 5</span></div></article>
+        <article class="rev"><q>Через год сверху протекли соседи. Ребята приехали, слили воду, и потолок вернулся в прежнее состояние. Бесплатно.</q><div class="who"><span>Наталья, Ленинский район</span><span class="mono">2ГИС · ★ 5</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap faq">
+      <div class="sec-head"><h2>Частые вопросы</h2><p>Если вашего вопроса здесь нет, позвоните, замерщик ответит.</p></div>
+      <details><summary>Сколько сантиметров съест потолок?</summary><p>Обычный профиль — 3–4 см от самой низкой точки старого потолка. Если ставим встроенные светильники, нужно 6–7 см.</p></details>
+      <details><summary>Будет ли запах?</summary><p>Полотна MSD сертифицированы для детских комнат. Слабый запах уходит за сутки при проветривании.</p></details>
+      <details><summary>Можно ли сделать потолок до поклейки обоев?</summary><p>Лучше после: монтаж идёт аккуратно и обои не портит. Если ремонт ещё не закончен, позвоните — подскажем порядок работ.</p></details>
+      <details><summary>Что будет, если затопят соседи?</summary><p>Полотно выдерживает до 100 литров на м². Приедем, сольём воду и вернём потолок на место — для наших клиентов это бесплатно.</p></details>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="order" id="order">
+      <div>
+        <h2>Вызвать замерщика</h2>
+        <p>Перезвоним в течение 15 минут и договоримся о времени. Замер бесплатный, ни к чему вас не обязывает.</p>
+        <p class="mono" style="color:#888;margin-top:28px">Ежедневно с 9:00 до 21:00<br>Новосибирск и Бердск</p>
+      </div>
+      <form id="form">
+        <div class="field"><label for="fname">Имя</label><input id="fname" required value="" placeholder="Как к вам обращаться"></div>
+        <div class="field"><label for="fphone">Телефон</label><input id="fphone" type="tel" required placeholder="+7 (900) 000-00-00"></div>
+        <div class="field"><label for="fday">Когда удобно</label>
+          <select id="fday"><option>Сегодня вечером</option><option>Завтра днём</option><option>Завтра вечером</option><option>В выходные</option></select></div>
+        <button class="btn" type="submit">Вызвать замерщика</button>
+        <p class="mono" style="color:#888">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><a class="logo" href="#top"><i></i>Плоскость</a><p style="margin-top:12px;color:#555;max-width:34ch">Натяжные потолки в Новосибирске с 2014 года. Больше 6 000 потолков.</p></div>
+      <div><b>Телефон</b><a href="tel:+73832140517">+7 (383) 214-05-17</a></div>
+      <div><b>Шоурум</b>ул. Красный проспект, 157/1, офис 204</div>
+      <div><b>Часы работы</b>Ежедневно 9:00–21:00</div>
+    </div>
+    <div class="legal mono"><span>ИП Савельев А. Н. · ОГРНИП 314540612300041</span><span>Демо-сайт: компания и данные вымышлены</span></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const T={
+  matte:{n:"Матовый",p:590,d:"Похож на идеально ровную побелку. Не бликует, подходит для любой комнаты."},
+  gloss:{n:"Глянцевый",p:690,d:"Отражает свет и интерьер, поэтому комната кажется выше. Хорош для небольших помещений."},
+  float:{n:"Парящий",p:590,d:"Лента в щели по периметру подсвечивает край, и потолок как будто висит в воздухе."},
+  lines:{n:"Световые линии",p:590,d:"Свет встроен прямо в полотно, люстра не нужна. Линии можно провести как угодно."},
+  stars:{n:"Звёздное небо",p:6900,d:"Оптоволоконные точки мерцают, как настоящее небо. Чаще всего выбирают для детской и спальни."}
+};
+const room=document.getElementById('room'),ceil=document.getElementById('ceil');
+const fills={matte:"#f6f5f3",gloss:"#fbfbfa",float:"#f3f2ef",lines:"#d6d3cd",stars:"#14182a"};
+let type="matte",lamps=6;
+
+// световые линии и звёзды на трапеции потолка (ближний край y=0, дальний y=250)
+const NS="http://www.w3.org/2000/svg";
+function pt(u,t){const y=340*t,xl=400*t,xr=1200-400*t;return[xl+u*(xr-xl),y]}
+const lg=document.getElementById('lines');
+[.3,.7].forEach(u=>{const a=pt(u,.02),b=pt(u,.98);const l=document.createElementNS(NS,'line');l.setAttribute('x1',a[0]);l.setAttribute('y1',a[1]);l.setAttribute('x2',b[0]);l.setAttribute('y2',b[1]);lg.appendChild(l)});
+{const a=pt(.05,.55),b=pt(.95,.55);const l=document.createElementNS(NS,'line');l.setAttribute('x1',a[0]);l.setAttribute('y1',a[1]);l.setAttribute('x2',b[0]);l.setAttribute('y2',b[1]);lg.appendChild(l)}
+const sg=document.getElementById('stars');
+for(let i=0;i<140;i++){const [x,y]=pt(Math.random(),Math.random()*.97);const c=document.createElementNS(NS,'circle');c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',(1.2+Math.random()*2.4*(1-y/500)).toFixed(1));c.style.setProperty('--d',(Math.random()*3).toFixed(2)+'s');c.style.setProperty('--o',(.5+Math.random()*.5).toFixed(2));sg.appendChild(c)}
+
+const fmt=n=>Math.round(n).toLocaleString('ru-RU');
+let shown=0,raf;
+function animateTo(v){cancelAnimationFrame(raf);const from=shown,start=performance.now(),dur=matchMedia('(prefers-reduced-motion:reduce)').matches?0:500;
+  const step=now=>{const k=dur?Math.min(1,(now-start)/dur):1;shown=from+(v-from)*(1-Math.pow(1-k,3));document.getElementById('sum').textContent=fmt(shown);if(k<1)raf=requestAnimationFrame(step)};raf=requestAnimationFrame(step)}
+function calc(){
+  const a=+document.getElementById('area').value;
+  document.getElementById('areaOut').textContent=a+' м²';
+  const per=4*Math.sqrt(a)*1.05;
+  let s=a*T[type].p+lamps*450;
+  if(type==="float")s+=per*450;
+  if(type==="lines")s+=Math.sqrt(a)*2*2400;
+  animateTo(Math.max(9000,s));
+  document.getElementById('roomTag').textContent=T[type].n+' · '+(type==="lines"?'2 400 ₽ за пог. м':type==="float"?'590 ₽ за м² + профиль':fmt(T[type].p)+' ₽ за м²');
+}
+document.querySelectorAll('.types button').forEach(b=>b.addEventListener('click',()=>{
+  type=b.dataset.t;document.querySelectorAll('.types button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  room.dataset.t=type;ceil.setAttribute('fill',fills[type]);document.getElementById('desc').textContent=T[type].d;calc();
+}));
+document.getElementById('area').addEventListener('input',calc);
+document.getElementById('lm').onclick=()=>{lamps=Math.max(0,lamps-1);document.getElementById('lamps').textContent=lamps;calc()};
+document.getElementById('lp').onclick=()=>{lamps=Math.min(40,lamps+1);document.getElementById('lamps').textContent=lamps;calc()};
+calc();
+
+const toast=document.getElementById('toast');
+document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();
+  toast.textContent='Заявка принята. Перезвоним в течение 15 минут.';toast.classList.add('on');e.target.reset();setTimeout(()=>toast.classList.remove('on'),4200)});
+</script>
+</body>
+</html>

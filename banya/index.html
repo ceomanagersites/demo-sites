@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Жар — банный двор в Челябинске</title>
+<meta name="description" content="Три бани на дровах с купелью и чаном. Бронирование по часам онлайн, парильщик по записи. Челябинск, Шершни.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--ink:#000;--white:#fff;--cream:#f3efe7;--ridge:#767676;--line:rgba(0,0,0,.14);--lineD:rgba(255,255,255,.16);--red:#fe3a3a;--red-d:#e02424;--pill:999px;--disp:"Unbounded",system-ui,sans-serif;--f:"Golos Text",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font:400 17px/1.55 var(--f);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--red);color:#fff;border:0;border-radius:var(--pill);padding:16px 28px;font-weight:600;text-decoration:none;cursor:pointer;transition:background .2s,transform .15s}
+.btn:hover{background:var(--red-d)}
+.btn:active{transform:scale(.97)}
+.btn.out{background:transparent;border:1px solid currentColor}
+.btn.out:hover{background:#fff;color:#000}
+
+/* hero */
+.hero{position:relative;min-height:100svh;background:#120d0a;color:#fff;display:flex;flex-direction:column;overflow:hidden;isolation:isolate}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3;opacity:.72;transform:scale(1.06);animation:settle 2.6s cubic-bezier(.2,.7,.1,1) forwards}
+@keyframes settle{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 50% 85%,rgba(254,58,58,.18),transparent 55%),linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.1) 40%,rgba(0,0,0,.75))}
+.steam{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.steam i{position:absolute;bottom:-20%;width:42vmax;height:42vmax;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.22),rgba(255,255,255,0) 62%);filter:blur(18px);opacity:0;animation:rise 9s ease-out infinite}
+.steam i:nth-child(1){left:8%;animation-delay:.3s}
+.steam i:nth-child(2){left:38%;animation-delay:2.4s;width:52vmax;height:52vmax}
+.steam i:nth-child(3){left:62%;animation-delay:4.6s}
+.steam i:nth-child(4){left:22%;animation-delay:6.4s;width:34vmax;height:34vmax}
+@keyframes rise{0%{transform:translateY(0) scale(.7);opacity:0}25%{opacity:.9}100%{transform:translateY(-95vh) scale(1.3);opacity:0}}
+.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 24px}
+.logo{font-family:var(--disp);font-weight:800;font-size:24px;letter-spacing:-.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:12px;height:12px;border-radius:50%;background:var(--red);box-shadow:0 0 18px 4px rgba(254,58,58,.7)}
+.top nav{display:flex;gap:28px;font-size:15px}
+.top nav a{text-decoration:none;opacity:.85}
+.top nav a:hover{opacity:1}
+.top .tel{font-weight:600;text-decoration:none;white-space:nowrap}
+@media(max-width:900px){.top nav{display:none}}
+.hero .body{margin-top:auto;padding:0 24px 40px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:end}
+.hero h1{font-family:var(--disp);font-weight:800;font-size:clamp(44px,8.4vw,132px);line-height:.92;letter-spacing:-.04em}
+.hero .side p{font-size:18px;max-width:34ch;opacity:.9}
+.hero .side .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.hero .facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--lineD);margin:0 24px;padding:18px 0 24px;font-size:14px;gap:16px}
+.hero .facts b{display:block;font-family:var(--disp);font-weight:600;font-size:22px}
+.hero .facts span{opacity:.7}
+@media(max-width:900px){.hero .body{grid-template-columns:1fr}.hero .facts{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.top .tel{display:none}}
+
+section{padding-top:110px}
+h2{font-family:var(--disp);font-weight:800;font-size:clamp(32px,4.6vw,64px);letter-spacing:-.04em;line-height:1}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.sh p{max-width:46ch;color:#444}
+
+/* бани с нашивками */
+.baths{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.bath{position:relative;border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;background:#fff}
+.bath figure{aspect-ratio:4/3;overflow:hidden;background:#222}
+.bath img{width:100%;height:100%;object-fit:cover;transition:transform 1.3s cubic-bezier(.2,.7,.2,1)}
+.bath:hover img{transform:scale(1.05)}
+.patch{position:absolute;top:16px;left:16px;width:74px;height:86px;color:#fff;display:grid;place-items:center;text-align:center;font-family:var(--disp);font-weight:600;font-size:10px;line-height:1.15;padding:10px 8px 18px}
+.patch svg{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.patch{z-index:1}
+.bath .b{padding:22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.bath h3{font-family:var(--disp);font-weight:600;font-size:22px;letter-spacing:-.02em}
+.bath ul{list-style:none;color:#444;font-size:15px;display:grid;gap:2px}
+.bath .pr{margin-top:auto;padding-top:14px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--line)}
+.bath .pr b{font-family:var(--disp);font-weight:600;font-size:22px}
+.bath .pr small{display:block;font-family:var(--f);font-weight:400;font-size:13px;color:var(--ridge)}
+.pick{border:1px solid #000;background:#fff;border-radius:var(--pill);padding:10px 18px;cursor:pointer;font-weight:600;transition:background .2s,color .2s}
+.pick:hover{background:#000;color:#fff}
+@media(max-width:900px){.baths{grid-template-columns:1fr}}
+
+/* бронирование по часам */
+.bk{background:var(--black);color:#fff;border-radius:32px;padding:44px;display:grid;grid-template-columns:1.5fr 1fr;gap:44px}
+.bk h2{color:#fff}
+.bk>*{min-width:0}
+@media(max-width:520px){.hero .facts b{font-size:18px}}
+.lab{font-size:13px;opacity:.65;margin:26px 0 10px}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.days button{flex:none;width:68px;border:1px solid var(--lineD);background:transparent;border-radius:16px;padding:10px 0;cursor:pointer;text-align:center;transition:background .2s,border-color .2s}
+.days button small{display:block;font-size:12px;opacity:.65}
+.days button b{font-family:var(--disp);font-weight:600;font-size:20px}
+.days button[aria-pressed=true]{background:#fff;color:#000;border-color:#fff}
+.bsel{display:flex;gap:8px;flex-wrap:wrap}
+.bsel button{border:1px solid var(--lineD);background:transparent;border-radius:var(--pill);padding:9px 16px;cursor:pointer}
+.bsel button[aria-pressed=true]{background:#fff;color:#000}
+.slots{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.slots button{border:1px solid var(--lineD);background:transparent;border-radius:12px;padding:11px 0;cursor:pointer;font-weight:500;font-size:15px;transition:background .15s,border-color .15s}
+.slots button:hover:not(:disabled){border-color:#fff}
+.slots button:disabled{opacity:.28;text-decoration:line-through;cursor:not-allowed}
+.slots button.sel{background:var(--red);border-color:var(--red);color:#fff}
+.slots button.sel.first{animation:flare .5s ease-out}
+@keyframes flare{0%{box-shadow:0 0 0 0 rgba(254,58,58,.7)}100%{box-shadow:0 0 0 12px rgba(254,58,58,0)}}
+.dur{display:flex;align-items:center;gap:14px}
+.dur button{width:40px;height:40px;border-radius:50%;border:1px solid var(--lineD);background:transparent;cursor:pointer;font-size:18px}
+.dur output{font-family:var(--disp);font-weight:600;font-size:20px;min-width:70px;text-align:center}
+.rside{background:#161616;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:14px;align-self:start}
+.rside h3{font-family:var(--disp);font-weight:600;font-size:18px}
+.ex{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--lineD);cursor:pointer;font-size:15px}
+.ex input{accent-color:var(--red);width:18px;height:18px;margin-right:10px;vertical-align:-3px}
+.ex span:last-child{opacity:.7;white-space:nowrap}
+.tot{font-family:var(--disp);font-weight:800;font-size:44px;letter-spacing:-.03em;line-height:1;margin-top:8px}
+.when{font-size:14px;opacity:.7;min-height:2.6em}
+.warn{color:#ff8a8a;font-size:14px}
+@media(max-width:1000px){.bk{grid-template-columns:1fr;padding:28px 18px}.slots{grid-template-columns:repeat(5,1fr)}}
+
+.price{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+.pi{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.pi h3{font-weight:600;font-size:18px}
+.pi span{display:block;color:#555;font-size:14px}
+.pi b{font-family:var(--disp);font-weight:600;font-size:18px;white-space:nowrap}
+@media(max-width:800px){.price{grid-template-columns:1fr}}
+
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:12px}
+.gal img{width:100%;height:100%;object-fit:cover;border-radius:18px}
+.gal img:nth-child(1){grid-column:span 2;grid-row:span 2}
+@media(max-width:800px){.gal{grid-template-columns:1fr 1fr;grid-auto-rows:160px}}
+
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rv{border-top:3px solid #000;padding-top:20px}
+.rv .st{color:var(--red);letter-spacing:2px}
+.rv p{margin-top:10px}
+.rv .w{margin-top:14px;color:#555;font-size:14px}
+@media(max-width:900px){.revs{grid-template-columns:1fr}}
+
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rules div{background:var(--cream);border-radius:20px;padding:24px}
+.rules h3{font-family:var(--disp);font-weight:600;font-size:17px;margin-bottom:8px}
+.rules p{color:#444;font-size:15px}
+@media(max-width:900px){.rules{grid-template-columns:1fr}}
+
+footer{margin-top:110px;background:var(--black);color:#fff;padding:56px 0 36px}
+.ft{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:24px;font-size:15px}
+.ft b{display:block;opacity:.6;font-weight:500;font-size:13px;margin-bottom:6px}
+.ft a{text-decoration:none}
+.big{font-family:var(--disp);font-weight:800;font-size:clamp(80px,20vw,280px);letter-spacing:-.05em;line-height:.85;margin-top:40px;display:flex;align-items:flex-end;gap:.08em}
+.big i{width:.16em;height:.16em;border-radius:50%;background:var(--red);box-shadow:0 0 40px 8px rgba(254,58,58,.55);margin-bottom:.12em}
+.demo{opacity:.5;font-size:13px;margin-top:24px}
+@media(max-width:800px){.ft{grid-template-columns:1fr 1fr}}
+
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,calc(100% + 60px));visibility:hidden;background:var(--red);color:#fff;padding:14px 24px;border-radius:var(--pill);z-index:60;transition:transform .45s cubic-bezier(.2,.9,.2,1);max-width:calc(100% - 32px);text-align:center;font-weight:500}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.steam{display:none}.hero>img{transform:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <img src="https://images.unsplash.com/photo-1660735698223-23a4edefa264?auto=format&fit=crop&w=2000&q=80" alt="">
+  <div class="steam" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="top">
+    <a class="logo" href="#"><i></i>Жар</a>
+    <nav aria-label="Разделы"><a href="#baths">Бани</a><a href="#book">Забронировать</a><a href="#price">Парение</a><a href="#rules">Правила</a></nav>
+    <a class="tel" href="tel:+73512480936">+7 (351) 248-09-36</a>
+  </div>
+  <div class="body">
+    <h1>Баня на дровах в двадцати минутах от центра</h1>
+    <div class="side">
+      <p>Три бани с купелью и чаном у соснового бора в Шершнях. Выберите баню и время — бронь подтвердим за 5 минут.</p>
+      <div class="acts"><a class="btn" href="#book">Выбрать время</a><a class="btn out" href="#baths">Посмотреть бани</a></div>
+    </div>
+  </div>
+  <div class="facts">
+    <div><b>от 1 800 ₽</b><span>за час</span></div>
+    <div><b>до 12</b><span>гостей в одной бане</span></div>
+    <div><b>4,9 ★</b><span>327 отзывов в 2ГИС</span></div>
+    <div><b>10:00–02:00</b><span>каждый день</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="baths">
+    <div class="sh"><h2>Три бани</h2><p>Минимальное время — 3 часа. В каждой бане парная, комната отдыха с самоваром, душ и туалет.</p></div>
+    <div class="baths">
+      <article class="bath">
+        <span class="patch"><svg viewBox="0 0 74 86"><path d="M37 2 70 12v34c0 20-15 32-33 38C19 78 4 66 4 46V12z" fill="#fe3a3a" stroke="#fff" stroke-width="2.5"/></svg>Русская<br>на дровах</span>
+        <figure><img src="https://images.unsplash.com/photo-1786799901347-e45b3e2d64ea?auto=format&fit=crop&w=900&q=80" alt="Парная с полками из дерева" loading="lazy"></figure>
+        <div class="b"><h3>Изба</h3><ul><li>до 8 гостей</li><li>Парная 12 м², печь «Термофор»</li><li>Купель с ледяной водой</li></ul>
+        <div class="pr"><div><b>2 500 ₽</b><small>за час, Пт–Вс 2 900 ₽</small></div><button type="button" class="pick" data-b="0">Выбрать</button></div></div>
+      </article>
+      <article class="bath">
+        <span class="patch"><svg viewBox="0 0 74 86"><path d="M37 2 70 12v34c0 20-15 32-33 38C19 78 4 66 4 46V12z" fill="#000" stroke="#fff" stroke-width="2.5"/></svg>Чан<br>под небом</span>
+        <figure><img src="https://images.unsplash.com/photo-1713270176378-45fbf4a27099?auto=format&fit=crop&w=900&q=80" alt="Баня с окном на воду" loading="lazy"></figure>
+        <div class="b"><h3>Сруб у пруда</h3><ul><li>до 12 гостей</li><li>Две парные: русская и финская</li><li>Горячий чан на берегу</li></ul>
+        <div class="pr"><div><b>3 200 ₽</b><small>за час, Пт–Вс 3 700 ₽</small></div><button type="button" class="pick" data-b="1">Выбрать</button></div></div>
+      </article>
+      <article class="bath">
+        <span class="patch"><svg viewBox="0 0 74 86"><path d="M37 2 70 12v34c0 20-15 32-33 38C19 78 4 66 4 46V12z" fill="#767676" stroke="#fff" stroke-width="2.5"/></svg>Для<br>двоих</span>
+        <figure><img src="https://images.unsplash.com/photo-1757940661240-f2e8d2ff93bf?auto=format&fit=crop&w=900&q=80" alt="Небольшая парная с подсветкой" loading="lazy"></figure>
+        <div class="b"><h3>Малая</h3><ul><li>до 4 гостей</li><li>Парная 6 м², тёплая подсветка</li><li>Душ впечатлений</li></ul>
+        <div class="pr"><div><b>1 800 ₽</b><small>за час, Пт–Вс 2 100 ₽</small></div><button type="button" class="pick" data-b="2">Выбрать</button></div></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="bk">
+      <div>
+        <h2>Свободное время</h2>
+        <div class="lab">День</div><div class="days" id="days" role="group" aria-label="День"></div>
+        <div class="lab">Баня</div>
+        <div class="bsel" id="bsel" role="group" aria-label="Баня"><button type="button" data-b="0" aria-pressed="true">Изба</button><button type="button" data-b="1" aria-pressed="false">Сруб у пруда</button><button type="button" data-b="2" aria-pressed="false">Малая</button></div>
+        <div class="lab">Начало — зачёркнуто время, с которого нужный срок уже занят</div><div class="slots" id="slots"></div>
+        <div class="lab">Сколько часов</div>
+        <div class="dur"><button type="button" id="dm" aria-label="Меньше часов">−</button><output id="dur">3 часа</output><button type="button" id="dp" aria-label="Больше часов">+</button></div>
+      </div>
+      <form class="rside" id="bform">
+        <h3>Ваша бронь</h3>
+        <div class="when" id="when">Выберите время начала</div>
+        <label class="ex"><span><input type="checkbox" data-x="2500">Парильщик, программа 40 минут</span><span>2 500 ₽</span></label>
+        <label class="ex"><span><input type="checkbox" data-x="400">Берёзовый и дубовый веники</span><span>400 ₽</span></label>
+        <label class="ex"><span><input type="checkbox" data-x="3000">Горячий чан на берегу</span><span>3 000 ₽</span></label>
+        <label class="ex"><span><input type="checkbox" data-x="600">Самовар и чай с травами</span><span>600 ₽</span></label>
+        <div class="tot"><span id="tot">0</span> ₽</div>
+        <div class="warn" id="warn" hidden></div>
+        <button class="btn" type="submit">Забронировать</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="price">
+    <div class="sh"><h2>Парение и добавки</h2><p>Парильщики с опытом от 5 лет. Записывайтесь заранее: в выходные они заняты на неделю вперёд.</p></div>
+    <div class="price">
+      <div class="pi"><div><h3>Классическое парение</h3><span>Два захода, веники, контраст</span></div><b>2 500 ₽</b></div>
+      <div class="pi"><div><h3>Банная программа «Жар»</h3><span>Скраб, мёд, парение, чан, 1,5 часа</span></div><b>5 900 ₽</b></div>
+      <div class="pi"><div><h3>Парение для двоих</h3><span>Два парильщика одновременно</span></div><b>4 600 ₽</b></div>
+      <div class="pi"><div><h3>Горячий чан</h3><span>Вода с травами, до 6 человек</span></div><b>3 000 ₽</b></div>
+      <div class="pi"><div><h3>Аренда мангала</h3><span>Угли, решётка, розжиг</span></div><b>700 ₽</b></div>
+      <div class="pi"><div><h3>Комплект для гостя</h3><span>Простыня, полотенце, тапочки, шапка</span></div><b>350 ₽</b></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="gal">
+      <img src="https://images.unsplash.com/photo-1741601274134-fa98352f1c95?auto=format&fit=crop&w=1200&q=80" alt="Гость поддаёт на камни" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1728404259075-209cfb5bb89c?auto=format&fit=crop&w=600&q=80" alt="Печь в деревянной бане" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1617372607364-f55cb6fa0502?auto=format&fit=crop&w=600&q=80" alt="Деревянная баня в снегу" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1678988227223-45112511eca2?auto=format&fit=crop&w=600&q=80" alt="Шайка и ковш в парной" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1757940556610-a114be4733bf?auto=format&fit=crop&w=600&q=80" alt="Парная с камнями" loading="lazy">
+    </div>
+  </section>
+
+  <section>
+    <div class="sh"><h2>Что говорят гости</h2><p>Средняя оценка 4,9 по 327 отзывам в 2ГИС.</p></div>
+    <div class="revs">
+      <div class="rv"><span class="st" aria-label="5 из 5">★★★★★</span><p>Пар лёгкий и сухой, печь держит жар все четыре часа. Парильщик Андрей — лучший в городе, ходим только к нему.</p><div class="w">Дмитрий, Изба</div></div>
+      <div class="rv"><span class="st" aria-label="5 из 5">★★★★★</span><p>Бронировали на сайте в 11 вечера, через 5 минут перезвонили. Чан на берегу зимой — отдельный восторг.</p><div class="w">Юлия, Сруб у пруда</div></div>
+      <div class="rv"><span class="st" aria-label="5 из 5">★★★★★</span><p>Взяли Малую на двоих на годовщину. Чисто, тихо, самовар уже стоял горячий к нашему приходу.</p><div class="w">Роман и Лиза, Малая</div></div>
+    </div>
+  </section>
+
+  <section id="rules">
+    <div class="sh"><h2>Правила</h2><p>Коротко о главном, чтобы вечер прошёл без сюрпризов.</p></div>
+    <div class="rules">
+      <div><h3>Предоплата 30%</h3><p>Остальное на месте картой или наличными. Отменить бронь бесплатно можно за сутки.</p></div>
+      <div><h3>Своя еда и напитки</h3><p>Можно приносить с собой. Посуду и холодильник дадим, пробковый сбор не берём.</p></div>
+      <div><h3>Время с запасом</h3><p>Баню протапливаем за 2 часа до вашего прихода. Задержаться можно, если следующие часы свободны: 1 000 ₽ за 30 минут.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div><b>Адрес</b>Челябинск, пос. Шершни, ул. Лесная, 44</div>
+      <div><b>Телефон</b><a href="tel:+73512480936">+7 (351) 248-09-36</a></div>
+      <div><b>Часы работы</b>Каждый день 10:00–02:00</div>
+      <div><b>Реквизиты</b>ИП Гусев Д. А.<br>ИНН 745218903364</div>
+    </div>
+    <div class="big" aria-hidden="true">Жар<i></i></div>
+    <p class="demo">Демо-сайт: компания и данные вымышлены.</p>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const B=[{n:"Изба",p:2500,w:2900},{n:"Сруб у пруда",p:3200,w:3700},{n:"Малая",p:1800,w:2100}];
+const HOURS=[10,11,12,13,14,15,16,17,18,19,20,21,22,23];
+const base=new Date(2026,10,15),DW=['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],MN=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+let day=0,bath=0,start=null,dur=3;
+const fmt=n=>Math.round(n).toLocaleString('ru-RU');
+// занятые часы: детерминированно от дня и бани, чтобы картинка не прыгала
+function taken(d,b){const s=new Set();let x=(d*7+b*13+5)%11;
+  const blocks=[[x%4+11,3],[(x+5)%5+16,3]];if((d+b)%4===1)blocks.push([22,2]);
+  blocks.forEach(([h,l])=>{for(let i=0;i<l;i++)s.add(h+i)});return s}
+const daysEl=document.getElementById('days'),slotsEl=document.getElementById('slots');
+for(let i=0;i<10;i++){const d=new Date(base);d.setDate(d.getDate()+i);const bt=document.createElement('button');bt.type='button';
+  bt.innerHTML=`<small>${i===0?'Сегодня':i===1?'Завтра':DW[d.getDay()]}</small><b>${d.getDate()}</b>`;bt.setAttribute('aria-pressed',i===0);bt.setAttribute('aria-label',d.getDate()+' '+MN[d.getMonth()]);
+  bt.onclick=()=>{day=i;daysEl.querySelectorAll('button').forEach((x,k)=>x.setAttribute('aria-pressed',k===i));start=null;renderSlots()};daysEl.appendChild(bt)}
+function renderSlots(){
+  const t=taken(day,bath);slotsEl.innerHTML='';
+  const fits=h=>{if(h+dur>26)return false;for(let k=h;k<h+dur;k++)if(t.has(k))return false;return true};
+  if(start!==null&&!fits(start))start=null;
+  HOURS.forEach(h=>{const bt=document.createElement('button');bt.type='button';bt.textContent=h+':00';bt.disabled=!fits(h);if(t.has(h))bt.title='Занято';
+    if(start!==null&&h>=start&&h<start+dur){bt.classList.add('sel');if(h===start)bt.classList.add('first')}
+    bt.onclick=()=>{start=h;renderSlots()};slotsEl.appendChild(bt)});
+  if(![...slotsEl.children].some(x=>!x.disabled))slotsEl.insertAdjacentHTML('beforeend','<p style="grid-column:1/-1;opacity:.7;font-size:15px">На этот день всё занято. Выберите другой день или баню.</p>');
+  update();
+}
+function update(){
+  const d=new Date(base);d.setDate(d.getDate()+day);const wk=[5,6,0].includes(d.getDay());const b=B[bath];
+  const warn=document.getElementById('warn');warn.hidden=true;
+  document.getElementById('dur').textContent=dur+' '+(dur<5?'часа':'часов');
+  if(start===null){document.getElementById('when').textContent='Выберите время начала';document.getElementById('tot').textContent=fmt(dur*(wk?b.w:b.p));return}
+  const t=taken(day,bath);let clash=false;for(let h=start;h<start+dur;h++)if(t.has(h))clash=true;
+  const end=start+dur;
+  if(clash){warn.hidden=false;warn.textContent='В это время баня уже занята. Сдвиньте начало или уменьшите время.'}
+  if(end>26){warn.hidden=false;warn.textContent='Работаем до 02:00 — выберите время пораньше.'}
+  let extra=0;document.querySelectorAll('[data-x]').forEach(c=>{if(c.checked)extra+=+c.dataset.x});
+  document.getElementById('when').textContent=`${b.n} · ${d.getDate()} ${MN[d.getMonth()]}, ${start}:00–${(end%24).toString().padStart(2,'0')}:00${wk?' · выходной тариф':''}`;
+  document.getElementById('tot').textContent=fmt(dur*(wk?b.w:b.p)+extra);
+}
+document.getElementById('dm').onclick=()=>{dur=Math.max(3,dur-1);renderSlots()};
+document.getElementById('dp').onclick=()=>{dur=Math.min(8,dur+1);renderSlots()};
+document.querySelectorAll('#bsel button').forEach(bt=>bt.onclick=()=>{bath=+bt.dataset.b;document.querySelectorAll('#bsel button').forEach(x=>x.setAttribute('aria-pressed',x===bt));start=null;renderSlots()});
+document.querySelectorAll('.pick').forEach(p=>p.onclick=()=>{document.querySelector(`#bsel button[data-b="${p.dataset.b}"]`).click();document.getElementById('book').scrollIntoView({behavior:'smooth'})});
+document.querySelectorAll('[data-x]').forEach(c=>c.onchange=update);
+const toast=document.getElementById('toast');
+document.getElementById('bform').onsubmit=e=>{e.preventDefault();
+  if(start===null){toast.textContent='Сначала выберите время начала';}
+  else if(!document.getElementById('warn').hidden){toast.textContent='Это время занято — выберите другое';}
+  else{toast.textContent='Бронь принята. Администратор позвонит в течение 5 минут.';}
+  toast.classList.add('on');setTimeout(()=>toast.classList.remove('on'),4200)};
+renderSlots();
+</script>
+</body>
+</html>

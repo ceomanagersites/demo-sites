@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Проём — пластиковые окна в Краснодаре</title>
+<meta name="description" content="Пластиковые окна Rehau, Veka и KBE с установкой за 7 дней. Расчёт цены онлайн, бесплатный замер по Краснодару.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1878ec;--blue-d:#0f63c9;--ink:#111;--graph:#606060;--ph:#b3b3b3;--div:#d9d9d9;--mist:#ededed;--cloud:#f6f6f6;--white:#fff;--r:24px;--pill:999px;--f:"Onest",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:400 16px/1.5 var(--f);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+
+/* hero window */
+.hero{padding:16px 16px 0}
+.frame{position:relative;border-radius:32px;overflow:hidden;min-height:min(760px,92vh);display:flex;flex-direction:column;isolation:isolate;background:#cfd9e2}
+.frame>.bg{position:absolute;inset:0;z-index:-2}
+.frame>.bg img{width:100%;height:100%;object-fit:cover;animation:zoomOut 2.4s cubic-bezier(.2,.7,.1,1) .3s both}
+@keyframes zoomOut{from{transform:scale(1.08)}}
+.frame::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,14,22,.5),rgba(8,14,22,0) 60%),linear-gradient(180deg,rgba(8,14,22,.5),rgba(8,14,22,.12) 34%,rgba(8,14,22,.08) 55%,rgba(8,14,22,.5))}
+@media(max-width:900px){.frame::after{background:linear-gradient(180deg,rgba(8,14,22,.62),rgba(8,14,22,.45) 45%,rgba(8,14,22,.3))}}
+/* створки */
+.sash{position:absolute;top:0;bottom:0;width:50%;z-index:3;border:22px solid #f4f4f2;background:linear-gradient(115deg,rgba(255,255,255,.55),rgba(220,232,242,.35) 40%,rgba(255,255,255,.15) 60%,rgba(255,255,255,.45));backdrop-filter:blur(3px);pointer-events:none;animation:var(--a) 1.25s cubic-bezier(.7,0,.2,1) .45s forwards}
+.sash.l{left:0;border-right-width:11px;--a:openL}
+@keyframes openL{to{transform:translateX(-102%)}}@keyframes openR{to{transform:translateX(102%)}}
+.sash.r{right:0;border-left-width:11px;--a:openR}
+.sash::after{content:"";position:absolute;top:50%;width:10px;height:56px;border-radius:6px;background:#e3e3e0;box-shadow:0 1px 0 #c9c9c5;transform:translateY(-50%)}
+.sash.l::after{right:10px}.sash.r::after{left:10px}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;color:#fff}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;letter-spacing:-.02em;text-decoration:none}
+.logo svg{width:26px;height:26px}
+.top nav{display:flex;gap:6px;background:rgba(255,255,255,.16);backdrop-filter:blur(12px);padding:5px;border-radius:var(--pill)}
+.top nav a{text-decoration:none;padding:8px 16px;border-radius:var(--pill);font-weight:500;font-size:15px}
+.top nav a:hover{background:#fff;color:var(--ink)}
+.top .tel{font-weight:700;text-decoration:none;white-space:nowrap}
+@media(max-width:900px){.top nav{display:none}}
+
+.hero-body{margin-top:auto;padding:0 24px 28px;color:#fff}
+.hero-body h1{font-weight:800;font-size:clamp(38px,6vw,76px);line-height:1.02;letter-spacing:-.035em;max-width:13ch;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.hero-body p{max-width:44ch;margin-top:14px;font-size:18px;opacity:.95}
+
+/* калькулятор поверх фото */
+.calc{margin-top:28px;background:#fff;color:var(--ink);border-radius:28px;padding:10px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr auto;gap:0;align-items:stretch;box-shadow:0 20px 60px rgba(0,0,0,.18)}
+.cf{padding:10px 18px;border-right:1px solid var(--div);display:flex;flex-direction:column;justify-content:center;min-width:0}
+.cf:nth-last-child(2){border-right:0}
+.cf label{font-size:12px;color:var(--graph);font-weight:500}
+.cf select,.cf input{border:0;background:transparent;font-weight:700;font-size:16px;padding:2px 0;width:100%;outline:none;appearance:none;cursor:pointer}
+.cf .wh{display:flex;align-items:center;gap:6px;font-weight:700}
+.cf .wh input{width:58px;border-bottom:1px dashed var(--ph);cursor:text}
+.go{background:var(--blue);color:#fff;border:0;border-radius:var(--pill);padding:0 30px;font-weight:700;cursor:pointer;min-height:56px;transition:background .2s,transform .15s}
+.go:hover{background:var(--blue-d)}
+.go:active{transform:scale(.97)}
+.result{grid-column:1/-1;display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)}
+.result.on{grid-template-rows:1fr}
+.result>div{overflow:hidden}
+.result .in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px 8px;border-top:1px solid var(--div);margin-top:10px}
+.result .price{font-weight:800;font-size:30px;letter-spacing:-.02em}
+.result .price small{font-size:14px;color:var(--graph);font-weight:500;margin-left:6px}
+.result a{color:var(--blue);font-weight:700}
+@media(max-width:900px){.calc{grid-template-columns:1fr 1fr}.cf{border-right:0;border-bottom:1px solid var(--div)}.cf:nth-child(2){border-left:1px solid var(--div)}.cf:nth-child(4){border-left:1px solid var(--div)}.go{grid-column:1/-1;margin-top:8px}}
+@media(max-width:520px){.top .tel{display:none}.hero{padding:8px 8px 0}.frame{border-radius:24px}.hero-body{padding:0 14px 16px}.sash{border-width:14px}.sash.l{border-right-width:7px}.sash.r{border-left-width:7px}}
+
+/* trust strip */
+.strip{display:flex;flex-wrap:wrap;gap:12px 40px;justify-content:space-between;padding:28px 4px;border-bottom:1px solid var(--div)}
+.strip div{display:flex;gap:12px;align-items:center}
+.strip b{font-size:26px;font-weight:800;letter-spacing:-.02em}
+.strip span{color:var(--graph);font-size:14px;line-height:1.3}
+
+section{padding:88px 0 0}
+h2{font-weight:800;font-size:clamp(30px,3.6vw,44px);letter-spacing:-.03em;line-height:1.1}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px;flex-wrap:wrap}
+.sh p{color:var(--graph);max-width:48ch}
+.sh a{color:var(--blue);font-weight:700;text-decoration:none}
+.sh a:hover{text-decoration:underline}
+
+/* каталог */
+.cat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.item{border:1px solid var(--div);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;background:#fff;transition:border-color .2s}
+.item:hover{border-color:var(--ink)}
+.item .pic{aspect-ratio:1;background:var(--cloud);display:grid;place-items:center}
+.item .pic svg{width:58%;height:auto}
+.item .b{padding:16px 18px 18px;display:flex;flex-direction:column;gap:4px;flex:1}
+.item h3{font-size:18px;font-weight:700}
+.item .meta{color:var(--graph);font-size:14px}
+.item .p{margin-top:auto;padding-top:12px;font-weight:800;font-size:20px}
+.item .p small{font-weight:500;color:var(--graph);font-size:13px}
+@media(max-width:900px){.cat{grid-template-columns:1fr 1fr}}
+
+/* профили */
+.prof{width:100%;border-collapse:collapse;border:1px solid var(--div);border-radius:var(--r);overflow:hidden;display:block}
+.prof table{width:100%;border-collapse:collapse}
+.prof th,.prof td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--div);font-size:15px}
+.prof thead th{background:var(--cloud);font-weight:700;font-size:13px;color:var(--graph)}
+.prof tbody tr:last-child td{border-bottom:0}
+.prof td:first-child{font-weight:700}
+.prof .best{color:var(--blue);font-weight:700}
+.scroll{overflow-x:auto;border:1px solid var(--div);border-radius:var(--r)}
+.scroll table{min-width:640px}
+
+/* работы */
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:260px 260px;gap:16px}
+.gal figure{position:relative;border-radius:var(--r);overflow:hidden}
+.gal figure:first-child{grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover}
+.gal figcaption{position:absolute;left:12px;bottom:12px;background:#fff;border-radius:var(--pill);padding:7px 14px;font-size:13px;font-weight:500}
+@media(max-width:800px){.gal{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:200px}.gal figure:first-child{grid-column:span 2;grid-row:auto}}
+
+/* шаги */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.st{background:var(--cloud);border-radius:var(--r);padding:22px}
+.st b{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;font-size:15px;margin-bottom:18px}
+.st h3{font-size:18px;margin-bottom:6px}
+.st p{color:var(--graph);font-size:15px}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rv{border:1px solid var(--div);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:14px}
+.rv .stars{color:var(--blue);letter-spacing:2px}
+.rv .w{margin-top:auto;font-weight:700;font-size:14px}
+.rv .w span{display:block;font-weight:400;color:var(--graph)}
+@media(max-width:900px){.revs{grid-template-columns:1fr}}
+
+.faq{max-width:860px}
+.faq details{border-bottom:1px solid var(--div)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 0;font-weight:700;font-size:18px;display:flex;justify-content:space-between;gap:16px}
+.faq summary::after{content:"";width:12px;height:12px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg);transition:transform .3s;flex:none;margin-top:4px}
+.faq details[open] summary::after{transform:rotate(-135deg)}
+.faq p{padding:0 0 20px;color:var(--graph);max-width:70ch}
+
+.cta{margin:88px 0 0;background:var(--blue);color:#fff;border-radius:32px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.cta p{opacity:.9;margin-top:10px;max-width:40ch}
+.cta form{background:#fff;color:var(--ink);border-radius:var(--r);padding:10px;display:grid;gap:0}
+.cta .cf{border-right:0;border-bottom:1px solid var(--div)}
+.cta .cf input{cursor:text}
+.cta .go{margin-top:10px}
+@media(max-width:800px){.cta{grid-template-columns:1fr;padding:28px 18px}}
+
+footer{padding:56px 0 36px;color:var(--graph);font-size:14px}
+.ft{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;border-top:1px solid var(--div);padding-top:28px}
+.ft b{color:var(--ink);display:block;font-size:15px}
+.ft a{text-decoration:none}
+
+.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,calc(100% + 60px));visibility:hidden;background:var(--ink);color:#fff;padding:14px 22px;border-radius:var(--pill);z-index:60;transition:transform .45s cubic-bezier(.2,.9,.2,1);max-width:calc(100% - 32px);text-align:center}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.sash{display:none}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="frame" id="frame">
+    <div class="bg"><img src="https://images.unsplash.com/photo-1633505899118-4ca6bd143043?auto=format&fit=crop&w=2000&q=80" alt="Светлая комната с большим окном"></div>
+    <div class="sash l" aria-hidden="true"></div><div class="sash r" aria-hidden="true"></div>
+    <div class="top">
+      <a class="logo" href="#"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="2" y="2" width="22" height="22" rx="4"/><path d="M13 2v22M2 13h11"/></svg>Проём</a>
+      <nav aria-label="Разделы"><a href="#catalog">Окна</a><a href="#profiles">Профили</a><a href="#works">Работы</a><a href="#faq">Вопросы</a></nav>
+      <a class="tel" href="tel:+78612050394">+7 (861) 205-03-94</a>
+    </div>
+    <div class="hero-body">
+      <h1>Тёплые окна в Краснодаре за 7 дней</h1>
+      <p>Окна Rehau, Veka и KBE с установкой и гарантией 10 лет. Посчитайте цену прямо здесь, замерщик приедет бесплатно.</p>
+      <form class="calc" id="calc">
+        <div class="cf"><label for="ctype">Окно</label>
+          <select id="ctype"><option value="1">Одностворчатое</option><option value="2" selected>Двустворчатое</option><option value="3">Трёхстворчатое</option><option value="b">Балконный блок</option></select></div>
+        <div class="cf"><label>Размер, см</label><div class="wh"><input id="cw" inputmode="numeric" value="130" aria-label="Ширина, см">×<input id="ch" inputmode="numeric" value="140" aria-label="Высота, см"></div></div>
+        <div class="cf"><label for="cprof">Профиль</label>
+          <select id="cprof"><option value="1">Rehau Blitz</option><option value="1.18" selected>Veka Softline</option><option value="1.32">KBE 88</option></select></div>
+        <div class="cf"><label for="copen">Открывается</label>
+          <select id="copen"><option value="0">Не открываются</option><option value="1" selected>Одна створка</option><option value="2">Все створки</option></select></div>
+        <button class="go" type="submit">Рассчитать</button>
+        <div class="result" id="result"><div><div class="in">
+          <div class="price"><span id="price">0</span> ₽<small>с установкой, откосами и отливом</small></div>
+          <a href="#order">Записаться на замер</a>
+        </div></div></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="strip">
+    <div><b>4,8</b><span>в 2ГИС<br>389 отзывов</span></div>
+    <div><b>7 дней</b><span>от замера<br>до установки</span></div>
+    <div><b>10 лет</b><span>гарантия<br>на монтаж</span></div>
+    <div><b>0 ₽</b><span>замер и доставка<br>по Краснодару</span></div>
+  </div>
+
+  <section id="catalog">
+    <div class="sh"><h2>Окна и цены</h2><p>Цена указана для профиля Rehau Blitz с двухкамерным стеклопакетом, установкой, откосами и отливом.</p></div>
+    <div class="cat">
+      <article class="item"><div class="pic"><svg viewBox="0 0 60 80" fill="none" stroke="#111" stroke-width="2.5"><rect x="3" y="3" width="54" height="74" rx="3"/><rect x="10" y="10" width="40" height="60" rx="1" stroke="#1878ec"/><path d="M46 38v6" stroke-linecap="round"/></svg></div><div class="b"><h3>Одностворчатое</h3><span class="meta">60 × 140 см, для кухни и санузла</span><span class="p">от 8 900 ₽</span></div></article>
+      <article class="item"><div class="pic"><svg viewBox="0 0 100 80" fill="none" stroke="#111" stroke-width="2.5"><rect x="3" y="3" width="94" height="74" rx="3"/><path d="M50 3v74"/><rect x="56" y="10" width="34" height="60" rx="1" stroke="#1878ec"/><path d="M60 38v6" stroke-linecap="round"/></svg></div><div class="b"><h3>Двустворчатое</h3><span class="meta">130 × 140 см, самое популярное</span><span class="p">от 14 500 ₽</span></div></article>
+      <article class="item"><div class="pic"><svg viewBox="0 0 120 80" fill="none" stroke="#111" stroke-width="2.5"><rect x="3" y="3" width="114" height="74" rx="3"/><path d="M41 3v74M79 3v74"/><rect x="9" y="10" width="26" height="60" rx="1" stroke="#1878ec"/><rect x="85" y="10" width="26" height="60" rx="1" stroke="#1878ec"/></svg></div><div class="b"><h3>Трёхстворчатое</h3><span class="meta">200 × 140 см, для гостиной</span><span class="p">от 21 900 ₽</span></div></article>
+      <article class="item"><div class="pic"><svg viewBox="0 0 110 90" fill="none" stroke="#111" stroke-width="2.5"><rect x="3" y="3" width="36" height="84" rx="3"/><rect x="45" y="3" width="62" height="50" rx="3"/><rect x="9" y="9" width="24" height="72" rx="1" stroke="#1878ec"/><path d="M76 3v50"/></svg></div><div class="b"><h3>Балконный блок</h3><span class="meta">Дверь и окно, 210 × 210 см</span><span class="p">от 39 000 ₽</span></div></article>
+    </div>
+  </section>
+
+  <section id="profiles">
+    <div class="sh"><h2>Какой профиль выбрать</h2><p>В квартире подойдёт любой. Для частного дома и угловых комнат советуем Veka или KBE.</p></div>
+    <div class="scroll"><table class="prof">
+      <thead><tr><th>Профиль</th><th>Камер</th><th>Толщина</th><th>Стеклопакет</th><th>Подходит для</th><th>Наценка</th></tr></thead>
+      <tbody>
+        <tr><td>Rehau Blitz</td><td>3</td><td>60 мм</td><td>2-камерный, 32 мм</td><td>Квартира, лоджия</td><td>базовая цена</td></tr>
+        <tr><td>Veka Softline</td><td>5</td><td>70 мм</td><td>2-камерный, энергосберегающий</td><td>Квартира, частный дом</td><td class="best">+18% · выбирают чаще всего</td></tr>
+        <tr><td>KBE 88</td><td>6</td><td>88 мм</td><td>3-камерный, 48 мм</td><td>Дом, шумная улица</td><td>+32%</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="works">
+    <div class="sh"><h2>Недавние установки</h2><a href="#order">Записаться на замер</a></div>
+    <div class="gal">
+      <figure><img src="https://images.unsplash.com/photo-1617228069096-4638a7ffc906?auto=format&fit=crop&w=1400&q=80" alt="Кухня с большим окном" loading="lazy"><figcaption>Кухня, ЖК «Самолёт» · 3 окна · 46 200 ₽</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1613324061338-19d4528a5be9?auto=format&fit=crop&w=800&q=80" alt="Белое окно" loading="lazy"><figcaption>Спальня · 17 800 ₽</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1707725669477-18feaba381f4?auto=format&fit=crop&w=800&q=80" alt="Раздвижная дверь" loading="lazy"><figcaption>Портал HS · 128 000 ₽</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1495524455245-b0f961d738a9?auto=format&fit=crop&w=800&q=80" alt="Открытое окно" loading="lazy"><figcaption>Дом в Елизаветинской · 9 окон</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1611282717912-b0c3c6c96cb1?auto=format&fit=crop&w=800&q=80" alt="Окно с белой рамой" loading="lazy"><figcaption>Детская · 15 900 ₽</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="sh"><h2>Как заказать</h2><p>Всё, кроме установки, можно сделать по телефону.</p></div>
+    <div class="steps">
+      <div class="st"><b>1</b><h3>Замер</h3><p>Замерщик приедет в день звонка с образцами профилей и уточнит цену.</p></div>
+      <div class="st"><b>2</b><h3>Договор</h3><p>Предоплата 30%, остаток после установки. Можно в рассрочку на 6 месяцев без переплаты.</p></div>
+      <div class="st"><b>3</b><h3>Производство</h3><p>5 рабочих дней на собственном заводе в Краснодаре.</p></div>
+      <div class="st"><b>4</b><h3>Установка</h3><p>Одно окно ставим за 2–3 часа. Мусор вывозим, подоконник моем.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sh"><h2>Отзывы</h2><a href="#">Все 389 отзывов в 2ГИС</a></div>
+    <div class="revs">
+      <article class="rv"><span class="stars" aria-label="5 из 5">★★★★★</span><p>Поменяли 4 окна в квартире за один день. В комнате на северной стороне стало заметно теплее, батареи теперь на минимуме.</p><div class="w">Марина К.<span>ул. Восточно-Кругликовская</span></div></article>
+      <article class="rv"><span class="stars" aria-label="5 из 5">★★★★★</span><p>Калькулятор на сайте показал 14 300, по договору вышло 14 900 — добавили москитную сетку. Ставили аккуратно, без пыли.</p><div class="w">Денис В.<span>мкр. Гидрострой</span></div></article>
+      <article class="rv"><span class="stars" aria-label="5 из 5">★★★★★</span><p>Через год окно в спальне стало плохо закрываться. Позвонил, мастер приехал на следующий день и отрегулировал бесплатно.</p><div class="w">Игорь Т.<span>ст. Елизаветинская</span></div></article>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <h2 style="margin-bottom:12px">Частые вопросы</h2>
+    <details><summary>Можно ли ставить окна зимой?</summary><p>Да, монтажная пена работает до −15 °C. Одно окно меняем за 20–30 минут, комната не успевает остыть.</p></details>
+    <details><summary>Откосы и подоконник входят в цену?</summary><p>Пластиковые откосы, отлив и подоконник до 30 см уже в цене из калькулятора. Подоконник шире 30 см — от 1 200 ₽ за метр.</p></details>
+    <details><summary>Есть ли рассрочка?</summary><p>Да, на 6 месяцев без переплаты через банк-партнёр. Решение приходит за 5 минут прямо на замере.</p></details>
+    <details><summary>Что входит в гарантию?</summary><p>10 лет на монтаж и 40 лет на профиль от производителя. Регулировку фурнитуры в первый год делаем бесплатно.</p></details>
+  </section>
+
+  <div class="cta" id="order">
+    <div><h2>Бесплатный замер завтра</h2><p>Оставьте телефон — перезвоним за 10 минут и подберём время. Замерщик привезёт образцы профилей.</p></div>
+    <form id="lead">
+      <div class="cf"><label for="ln">Имя</label><input id="ln" required placeholder="Анна"></div>
+      <div class="cf"><label for="lp">Телефон</label><input id="lp" type="tel" required placeholder="+7 (900) 000-00-00"></div>
+      <div class="cf"><label for="lc">Сколько окон</label><select id="lc"><option>1–2 окна</option><option selected>3–4 окна</option><option>5 и больше</option><option>Балкон или лоджия</option></select></div>
+      <button class="go" type="submit">Записаться на замер</button>
+    </form>
+  </div>
+</main>
+
+<footer class="wrap">
+  <div class="ft">
+    <div><b>Проём</b>Окна в Краснодаре и крае с 2011 года</div>
+    <div><b>+7 (861) 205-03-94</b>Ежедневно 8:00–20:00</div>
+    <div><b>Офис и шоурум</b>ул. Ставропольская, 214</div>
+    <div><b>ООО «Проём-Юг»</b>ИНН 2310187455</div>
+  </div>
+  <p style="margin-top:24px">Демо-сайт: компания и данные вымышлены.</p>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const fmt=n=>Math.round(n).toLocaleString('ru-RU');
+const base={1:8900,2:14500,3:21900,b:39000},area={1:.84,2:1.82,3:2.8,b:4.41};
+document.getElementById('ctype').addEventListener('change',e=>{const d={1:[60,140],2:[130,140],3:[200,140],b:[210,210]}[e.target.value];document.getElementById('cw').value=d[0];document.getElementById('ch').value=d[1]});
+let shown=0;
+document.getElementById('calc').addEventListener('submit',e=>{e.preventDefault();
+  const t=document.getElementById('ctype').value,w=+document.getElementById('cw').value||100,h=+document.getElementById('ch').value||140;
+  const k=+document.getElementById('cprof').value,o=+document.getElementById('copen').value;
+  const sq=w*h/10000,v=(base[t]*.55+base[t]*.45*sq/area[t])*k+o*2400*(t==='1'?.6:1)-2400;
+  const target=Math.max(6900,Math.round(v/100)*100),from=shown,st=performance.now();
+  document.getElementById('result').classList.add('on');
+  const step=n=>{const q=Math.min(1,(n-st)/600);shown=from+(target-from)*(1-Math.pow(1-q,3));document.getElementById('price').textContent=fmt(shown);if(q<1)requestAnimationFrame(step)};requestAnimationFrame(step);
+});
+const toast=document.getElementById('toast');
+document.getElementById('lead').addEventListener('submit',e=>{e.preventDefault();toast.textContent='Записали на замер. Перезвоним в течение 10 минут.';toast.classList.add('on');e.target.reset();setTimeout(()=>toast.classList.remove('on'),4200)});
+</script>
+</body>
+</html>
