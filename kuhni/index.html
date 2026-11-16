@@ -35,7 +35,7 @@ header nav a:hover{color:var(--black)}
 
 /* hero */
 .hero{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;align-items:stretch;padding-top:24px}
-.hero-txt{background:var(--white);padding:56px 48px;display:flex;flex-direction:column}
+.hero-txt{padding:40px 24px 8px 0;display:flex;flex-direction:column}
 .hero h1{font-weight:200;font-size:clamp(46px,5.6vw,78px);line-height:1.02;letter-spacing:-.035em;color:var(--black)}
 .hero-txt p{color:var(--graph);font-size:18px;max-width:38ch;margin-top:26px}
 .hero-txt .acts{margin-top:auto;padding-top:40px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
@@ -48,14 +48,15 @@ header nav a:hover{color:var(--black)}
 .tag small{display:block;font-size:12px;font-weight:500;opacity:.8;margin-top:6px}
 .tag b{display:block;font-weight:300;font-size:34px;letter-spacing:-.03em;line-height:1;margin-top:8px}
 @keyframes swing{0%{transform:translateY(-140px) rotate(0)}35%{transform:translateY(0) rotate(14deg)}55%{transform:rotate(-8deg)}72%{transform:rotate(4deg)}86%{transform:rotate(-1.5deg)}100%{transform:rotate(0)}}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-pic{min-height:380px;order:-1}.hero-txt{padding:32px 22px}}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-pic{min-height:380px;order:-1}.hero-txt{padding:28px 0 0}}
 
-.facts{display:grid;grid-template-columns:repeat(4,1fr);background:var(--white);margin-top:28px}
-.facts div{padding:24px 28px;border-right:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:40px;border-top:1px solid var(--line)}
+.facts div{padding:22px 28px 0;border-right:1px solid var(--line)}
+.facts div:first-child{padding-left:0}
 .facts div:last-child{border-right:0}
 .facts b{display:block;font-weight:300;font-size:36px;letter-spacing:-.03em;color:var(--black)}
 .facts span{color:var(--graph);font-size:14px}
-@media(max-width:800px){.facts{grid-template-columns:1fr 1fr}.facts div:nth-child(2){border-right:0}.facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:800px){.facts{grid-template-columns:1fr 1fr}.facts div{padding:18px 16px 18px 0}.facts div:nth-child(odd){padding-left:0}.facts div:nth-child(even){padding-left:16px}.facts div:nth-child(2){border-right:0}.facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 
 section{padding-top:110px}
 h2{font-weight:200;font-size:clamp(36px,4.4vw,60px);letter-spacing:-.035em;line-height:1.05;color:var(--black)}

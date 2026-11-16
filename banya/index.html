@@ -7,9 +7,9 @@
 <meta name="description" content="Три бани на дровах с купелью и чаном. Бронирование по часам онлайн, парильщик по записи. Челябинск, Шершни.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--black:#0a0a0a;--ink:#000;--white:#fff;--cream:#f3efe7;--ridge:#767676;--line:rgba(0,0,0,.14);--lineD:rgba(255,255,255,.16);--red:#fe3a3a;--red-d:#e02424;--pill:999px;--disp:"Unbounded",system-ui,sans-serif;--f:"Golos Text",system-ui,sans-serif}
+:root{--black:#0a0a0a;--ink:#000;--white:#fff;--cream:#f3efe7;--ridge:#767676;--line:rgba(0,0,0,.14);--lineD:rgba(255,255,255,.16);--red:#fe3a3a;--red-d:#e02424;--pill:999px;--disp:"Playfair Display",Georgia,serif;--f:"Golos Text",system-ui,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--white);color:var(--ink);font:400 17px/1.55 var(--f);-webkit-font-smoothing:antialiased}
@@ -37,7 +37,7 @@ button,input,select{font:inherit;color:inherit}
 .steam i:nth-child(4){left:22%;animation-delay:6.4s;width:34vmax;height:34vmax}
 @keyframes rise{0%{transform:translateY(0) scale(.7);opacity:0}25%{opacity:.9}100%{transform:translateY(-95vh) scale(1.3);opacity:0}}
 .top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 24px}
-.logo{font-family:var(--disp);font-weight:800;font-size:24px;letter-spacing:-.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo{font-family:var(--disp);font-weight:700;font-size:28px;letter-spacing:0;text-decoration:none;display:flex;align-items:center;gap:10px}
 .logo i{width:12px;height:12px;border-radius:50%;background:var(--red);box-shadow:0 0 18px 4px rgba(254,58,58,.7)}
 .top nav{display:flex;gap:28px;font-size:15px}
 .top nav a{text-decoration:none;opacity:.85}
@@ -45,7 +45,7 @@ button,input,select{font:inherit;color:inherit}
 .top .tel{font-weight:600;text-decoration:none;white-space:nowrap}
 @media(max-width:900px){.top nav{display:none}}
 .hero .body{margin-top:auto;padding:0 24px 40px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:end}
-.hero h1{font-family:var(--disp);font-weight:800;font-size:clamp(44px,8.4vw,132px);line-height:.92;letter-spacing:-.04em}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(44px,7vw,112px);line-height:1;letter-spacing:-.015em;max-width:14ch}
 .hero .side p{font-size:18px;max-width:34ch;opacity:.9}
 .hero .side .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
 .hero .facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--lineD);margin:0 24px;padding:18px 0 24px;font-size:14px;gap:16px}
@@ -55,7 +55,7 @@ button,input,select{font:inherit;color:inherit}
 @media(max-width:520px){.top .tel{display:none}}
 
 section{padding-top:110px}
-h2{font-family:var(--disp);font-weight:800;font-size:clamp(32px,4.6vw,64px);letter-spacing:-.04em;line-height:1}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(34px,4.6vw,64px);letter-spacing:-.01em;line-height:1.04}
 .sh{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
 .sh p{max-width:46ch;color:#444}
 
@@ -107,7 +107,7 @@ h2{font-family:var(--disp);font-weight:800;font-size:clamp(32px,4.6vw,64px);lett
 .ex{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--lineD);cursor:pointer;font-size:15px}
 .ex input{accent-color:var(--red);width:18px;height:18px;margin-right:10px;vertical-align:-3px}
 .ex span:last-child{opacity:.7;white-space:nowrap}
-.tot{font-family:var(--disp);font-weight:800;font-size:44px;letter-spacing:-.03em;line-height:1;margin-top:8px}
+.tot{font-family:var(--disp);font-weight:700;font-size:44px;letter-spacing:-.03em;line-height:1;margin-top:8px}
 .when{font-size:14px;opacity:.7;min-height:2.6em}
 .warn{color:#ff8a8a;font-size:14px}
 @media(max-width:1000px){.bk{grid-template-columns:1fr;padding:28px 18px}.slots{grid-template-columns:repeat(5,1fr)}}
@@ -141,7 +141,7 @@ footer{margin-top:110px;background:var(--black);color:#fff;padding:56px 0 36px}
 .ft{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:24px;font-size:15px}
 .ft b{display:block;opacity:.6;font-weight:500;font-size:13px;margin-bottom:6px}
 .ft a{text-decoration:none}
-.big{font-family:var(--disp);font-weight:800;font-size:clamp(80px,20vw,280px);letter-spacing:-.05em;line-height:.85;margin-top:40px;display:flex;align-items:flex-end;gap:.08em}
+.big{font-family:var(--disp);font-weight:700;font-size:clamp(80px,20vw,280px);letter-spacing:-.05em;line-height:.85;margin-top:40px;display:flex;align-items:flex-end;gap:.08em}
 .big i{width:.16em;height:.16em;border-radius:50%;background:var(--red);box-shadow:0 0 40px 8px rgba(254,58,58,.55);margin-bottom:.12em}
 .demo{opacity:.5;font-size:13px;margin-top:24px}
 @media(max-width:800px){.ft{grid-template-columns:1fr 1fr}}
